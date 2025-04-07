@@ -1,5 +1,7 @@
-import Person from "./component/Person";
-import FirstPage from "./component/FirstPage";
+import { Button } from "@/components/ui/button"
+import MUIButton from '@mui/material/Button';
+
+
 export default function App() {
 
 
@@ -10,16 +12,8 @@ export default function App() {
         <h1 className="w-full p-6 bg-amber-100 font-extrabold">
           React App Starter
         </h1>
-        <section className="w-full p-5 bg-amber-100 flex">
-          <ul className="list-inside list-disc flex-1">
-            <span className="font-semibold">Tech Stack:</span>
-            <li>Vite</li>
-            <li>React</li>
-            <li>JavaScript</li>
-            <li>Tailwind</li>
-          </ul>
-        </section>
-        <Person name = "Jettt!" address = "49/547 SMK NMM"/>
+        <Button>Button from ShadCn</Button>
+        <MUIButton>Button from MUI</MUIButton>
       </div>
     </div>
   );
