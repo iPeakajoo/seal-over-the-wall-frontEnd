@@ -1,10 +1,10 @@
 export const products = [
   {
     "productId": 1,
-    "screenImageName": "customike",
+    "screenImageName": "customike_white",
     "productType": "shirt",
     "price": 499,
-    "imageSource": "../asset/images/"
+    "imageSource": "images/"
   },
   {
     "productId": 2,

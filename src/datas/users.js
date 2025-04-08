@@ -1,5 +1,5 @@
-{
-    "users": [
+
+export const datas = [
     {
       "userId": 1,
       "firstName": "Nattaya",
@@ -105,4 +105,3 @@
       "country": "Thailand"
     }
   ]
-}

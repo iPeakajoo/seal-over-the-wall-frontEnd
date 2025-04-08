@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import MUIButton from '@mui/material/Button';
 
 
+
 export default function App() {
 
 
@@ -14,6 +15,8 @@ export default function App() {
         </h1>
         <Button>Button from ShadCn</Button>
         <MUIButton>Button from MUI</MUIButton>
+        <MUIButton variant="contained">Contained</MUIButton>
+
       </div>
     </div>
   );
