@@ -1,7 +1,9 @@
 import AppRoutes from "./routes/AppRoutes"
+
 import Checkout from "./pages/checkout/CheckOut"
 import CheckoutSummary from "./pages/checkout/CheckoutSummary"
 import CheckoutButton from "./components/CheckoutButton"
+
 
 const App = () => {
   return (
