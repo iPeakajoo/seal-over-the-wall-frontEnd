@@ -18,9 +18,7 @@ export default function App() {
         <Button className="bg-primary text-primary-foreground px-4 py-2 rounded-md">Button from ShadCn</Button>
         <MUIButton>Button from MUI</MUIButton>
         <MUIButton variant="contained">Contained</MUIButton>
-        <div class="bg-primary-blue-500 text-5xl font-bold">
-      Hello Tailwind
-        </div>
+        <div class="bg-primary-blue-500 text-5xl text-primary-white font-bold">Hello Tailwind</div>
       </div>
     </div>
   );
