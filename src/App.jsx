@@ -1,8 +1,8 @@
 import AppRoutes from "./routes/AppRoutes"
-
 import Checkout from "./pages/checkout/CheckOut"
 import CheckoutSummary from "./pages/checkout/CheckoutSummary"
 import CheckoutButton from "./components/CheckoutButton"
+
 
 
 const App = () => {
@@ -12,7 +12,7 @@ const App = () => {
     {/* <CheckoutSummary/> */}
 
     <div class = "w-[1072px] mt-44">
-      <CheckoutButton currentStep = "payment" orderValue={50} />
+      <CheckoutButton currentStep = "payment" orderValue={5000} />
     </div>
     </div>
     

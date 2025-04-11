@@ -18,7 +18,7 @@ const CheckoutSummary = () => {
             <div id ="shippingInformation" class="flex justify-between border-[1.25px] p-6 w-full h-auto items-center border-[#A1A1AA]">
               <div id="shipping" class="w-[504px] h-auto">
                 <p class="mb-6 text-[20px] text-[#A1A1AA] font-[600]">Shipping Method</p>
-                
+
               </div>
               <button class="font-[500] items-center inline-flex hover:cursor-pointer hover:outline-gray-400 hover:outline-1 hover:scale-100 duration-300 h-fit p-4">Edit</button>
             </div>
