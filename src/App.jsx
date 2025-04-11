@@ -1,14 +1,5 @@
-import { Button } from "@/components/ui/button"
-import MUIButton from '@mui/material/Button';
-import './index.css'
-
-
-
-
-export default function App() {
-
-
-
+import AppRoutes from "./routes/AppRoutes"
+const App = () => {
   return (
     <div className="h-screen flex justify-center bg-blue-950">
       <div className="p-6 gap-y-6 flex flex-col justify-start w-[80%] lg:w-[70%]">
@@ -18,7 +9,9 @@ export default function App() {
         <Button className="bg-primary text-primary-foreground px-4 py-2 rounded-md">Button from ShadCn</Button>
         <MUIButton>Button from MUI</MUIButton>
         <MUIButton variant="contained">Contained</MUIButton>
-        <div class="bg-primary-blue-500 text-5xl text-primary-white font-bold">Hello Tailwind</div>
+        <div class="bg-primary-blue-500 text-5xl font-bold">
+      Hello Tailwind
+        </div>
       </div>
     </div>
   );

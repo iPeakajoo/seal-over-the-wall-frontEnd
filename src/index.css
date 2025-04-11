@@ -11,11 +11,11 @@
   --color-primary-blue-300: rgb(179, 189, 241);
   --color-primary-white: rgb(255, 255, 255);
   --color-primary-black: rgb(32, 32, 32);
-  --color-secondary-dark-gray-300: rgb(209, 209, 214);
-  --color-secondary-dark-gray-200: rgb(255, 255, 228);
-  --color-secondary-light-gray-200: rgb(228, 228, 231);
-  --color-secondary-light-gray-300: rgb(219, 219, 220);
-  --color-secondary-light-gray-500: rgb(173, 173, 175);
+  --color-secoundary-dark-gray-300: rgb(209, 209, 214);
+  --color-secoundary-dark-gray-200: rgb(255, 255, 228);
+  --color-secoundary-light-gray-200: rgb(228, 228, 231);
+  --color-secoundary-light-gray-300: rgb(219, 219, 220);
+  --color-secoundary-light-gray-5i00: rgb(173, 173, 175);
 
 
 }
@@ -58,3 +58,9 @@
     --lh-loose: 2;
   }
 }
+
+
+body{
+  padding-top: 100px;
+}
+
