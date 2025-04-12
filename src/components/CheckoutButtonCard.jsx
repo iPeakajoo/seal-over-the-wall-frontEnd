@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from "prop-types";
 
 function CheckoutButton({currentStep, orderValue}) {
   let buttonText = "";
@@ -21,4 +22,14 @@ function CheckoutButton({currentStep, orderValue}) {
   )
 }
 
+CheckoutButton.PropTypes = {
+  currentStep : PropTypes.oneOf(["shipping", "payment", "summary"])
+}
+
+
+
+
 export default CheckoutButton
+
+
+

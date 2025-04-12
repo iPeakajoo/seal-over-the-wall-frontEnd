@@ -36,7 +36,7 @@ const CustomConnector = styled(StepConnector)(({ theme }) => ({
 }));
 
 
-const steps = ['Hello', 'Payment', 'Summary'];
+const steps = ['Shipping', 'Payment', 'Summary'];
 
 
 //Stepper component
