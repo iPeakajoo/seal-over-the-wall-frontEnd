@@ -4,10 +4,11 @@ import { useState } from 'react'
 
 const CheckoutShipping = () => {
 
-  const [formData, setFormData] = useState({
+  const [shippingData, setShippingData] = useState({
     firstName:'',
     lastName:'',
     street:'',
+    specify:'',
     city:'',
     postal:'',
     state:'',
@@ -21,7 +22,7 @@ const CheckoutShipping = () => {
 
   const handleOnchange = (e) => {
     const {name, value, type, checked} = e.target;
-    setFormData((prev) => ({
+    setShippingData((prev) => ({
       ...prev,
       [name]: type === 'checkbox' ? checked : value,
     }));
@@ -29,7 +30,7 @@ const CheckoutShipping = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submitting", formData)
+    console.log("Submitting", shippingData)
   }
 
   return (
@@ -41,76 +42,114 @@ const CheckoutShipping = () => {
             <div class="grid grid-cols-2 gap-[24px]">
                 <div class="col-span-1">
                   <p class="mt-[24px] font-semibold text-[1.25rem]">First name<span class="text-red-500">*</span></p>
-                  <input  type="text" 
+                  <input  type="text"
                           placeholder="First name"
                           name="firstName"
-                          value={formData.firstName} 
-                          className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"/>
+                          value={shippingData.firstName}
+                          className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"
+                          onChange={handleOnchange}/>
                 </div>
                 <div className="col-span-1">
                   <p className="mt-[24px] font-semibold text-[1.25rem]">Last name<span className="text-red-500">*</span></p>
-                  <input  type="text" 
-                          placeholder="Last name" 
-                          className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"/>
+                  <input  type="text"
+                          placeholder="Last name"
+                          name="lastName"
+                          value={shippingData.lastName}
+                          className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"
+                          onChange={handleOnchange}/>
                 </div>
                 <div className="col-span-2">
                   <p className="font-semibold text-[1.25rem]">Street number and name or P.O box<span className="text-red-500">*</span></p>
-                  <input  type="text" 
-                          placeholder="Street number and name or P.O box" 
-                          className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"/>
+                  <input  type="text"
+                          placeholder="Street number and name or P.O box"
+                          name="street"
+                          value={shippingData.street}
+                          className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"
+                          onChange={handleOnchange}/>
                 </div>
                 <div className="col-span-2">
                   <p className="font-semibold text-[1.25rem]">Specify company, apt, suite, unit<span className="text-red-500">*</span></p>
-                  <input  type="text" 
-                          placeholder="Specify company, apt, suite, unit" 
-                          className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"/>
+                  <input  type="text"
+                          placeholder="Specify company, apt, suite, unit"
+                          name="specify"
+                          value={shippingData.specify}
+                          className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"
+                          onChange={handleOnchange}/>
                 </div>
                 <div className="col-span-1">
                   <p className=" font-semibold text-[1.25rem]">City<span className="text-red-500">*</span></p>
-                  <input  type="text" 
-                          placeholder="City" 
-                          className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"/>
+                  <input  type="text"
+                          placeholder="City"
+                          name="city"
+                          value={shippingData.city}
+                          className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"
+                          onChange={handleOnchange}/>
                 </div>
                 <div className="col-span-1">
                   <p className=" font-semibold text-[1.25rem]">Postal code<span className="text-red-500">*</span></p>
-                  <input  type="text" 
-                          placeholder="Postal code" 
-                          className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"/>
+                  <input  type="text"
+                          placeholder="Postal code"
+                          name="postal"
+                          value={shippingData.postal}
+                          className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"
+                          onChange={handleOnchange}/>
                 </div>
                 <div className="col-span-1">
                   <p className=" font-semibold text-[1.25rem]">State<span className="text-red-500">*</span></p>
-                  <input  type="text" 
-                          placeholder="State" 
-                          className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"/>
+                  <input  type="text"
+                          placeholder="State"
+                          name="state"
+                          value={shippingData.state}
+                          className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"
+                          onChange={handleOnchange}/>
                 </div>
                 <div className="col-span-1">
                   <p className=" font-semibold text-[1.25rem]">Country<span className="text-red-500">*</span></p>
-                  <input  type="text" 
-                          placeholder="Country" 
-                          className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"/>
+                  <input  type="text"
+                          placeholder="Country"
+                          name="country"
+                          value={shippingData.country}
+                          className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"
+                          onChange={handleOnchange}/>
                 </div>
             </div>
             <h3 className="mt-[40px] text-[2rem] font-semibold col-span-2">Contact Information</h3>
             <div className="grid grid-cols-2 gap-[24px]">
               <div className="col-span-1">
                 <p className=" font-semibold text-[1.25rem]">Email<span className="text-red-500">*</span></p>
-                <input  type="text" 
-                        placeholder="Email" 
-                        className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"/>
+                <input  type="text"
+                        placeholder="Email"
+                        name="email"
+                        value={shippingData.email}
+                        className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"
+                        onChange={handleOnchange}/>
               </div>
               <div className="col-span-1">
                 <p className=" font-semibold text-[1.25rem]">Mobile phone number<span className="text-red-500">*</span></p>
-                <input  type="text" 
-                        placeholder="Mobile phone number" 
-                        className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"/>
+                <input  type="text"
+                        placeholder="Mobile phone number"
+                        name="phone"
+                        value={shippingData.phone}
+                        className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"
+                        onChange={handleOnchange}/>
               </div>
             </div>
             <div className="flex flex-row gap-[8px] mt-[24px] items-center">
-              <input type="checkbox" className="border-1 border-[#A1A1AA] w-[24px] h-[24px]"/>
+              <input  type="checkbox"
+                      name="smsPromotion"
+                      checked={shippingData.smsPromotion}
+                      onChange={handleOnchange}
+                      className="border-1 border-[#A1A1AA] w-[24px] h-[24px]"
+                      />
               <p className="text-xl font-semibold">Please send me SMS shipping updates about my order</p>
             </div>
             <div className="flex flex-row gap-[8px] mt-[8px] items-center">
-              <input type="checkbox" className="w-[24px] h-[24px]"/>
+              <input  type="checkbox"
+                      name="emailPromotion"
+                      checked={shippingData.emailPromotion}
+                      onChange={handleOnchange}
+                      className="border-1 border-[#A1A1AA] w-[24px] h-[24px]"
+                      />
               <p className="text-xl font-semibold">Please add me to the Custommike? email list</p>
             </div>
         </div>
@@ -184,8 +223,8 @@ const CheckoutShipping = () => {
 
             <CheckoutButton currentStep='shipping'/>
               <p className="text-gray-500 mt-[12px]">
-                By continuing, I confirm that I have read and accept the
-                <a href="#" className="underline">Terms and Conditions</a> and the
+                By continuing, I confirm that I have read and accept the&nbsp;
+                <a href="#" className="underline">Terms and Conditions</a> and the&nbsp;
                 <a href="#" className="underline">Privacy Policy</a>.</p>
     </div>
 

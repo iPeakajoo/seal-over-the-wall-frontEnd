@@ -12,7 +12,7 @@ const CheckoutSummary = () => {
 
             <div id ="shippingInformation" className="flex justify-between border-[1.25px] p-6 w-full h-auto items-center border-secondary-light-gray-500">
               <CheckoutAddress name='Somchai Kitkardee' address='62/1 Soi Ekkachai 116, Bang Bon Nuea, Bang Bon, 10150, Bangkok, Thailand' tel='080-236-6966'/>
-              <button className="text-lg font-[500] items-center hover:cursor-pointer hover:scale-100 duration-300 p-4">Test</button>
+              <button className="text-lg font-[500] items-center hover:cursor-pointer hover:scale-100 duration-300 p-4">Edit</button>
             </div>
 
             <div id ="shippingInformation" className="flex justify-between border-[1.25px] p-6 w-full h-auto items-center border-secondary-light-gray-500">

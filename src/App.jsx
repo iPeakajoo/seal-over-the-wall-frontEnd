@@ -6,6 +6,9 @@ import CheckoutAddress from "./components/CheckoutAddressCard"
 import CheckoutShippingCard from "./components/CheckoutShippingCard"
 import CheckoutCard from "./components/CheckoutCardCard"
 import CheckoutShipping from "./pages/checkout/CheckoutShipping"
+import CheckoutPaymentCard from "./pages/checkout/CheckoutPaymentCard"
+import Success from "./pages/Success"
+import CheckoutPaymentQR from "./pages/checkout/CheckoutPaymentQR"
 
 
 
@@ -15,18 +18,23 @@ const App = () => {
    <div>
     {/* <AppRoutes /> */}
     {/* <CheckoutSummary/> */}
-    {/* <Checkout/> */}
+    <Checkout/>
 
     <div>
-      {/* <CheckoutShipping/> */}
-      {/* <CheckoutShipping method="Fastest Delivery" methodPrice={150}/> */}
+      {/* <CheckoutPaymentCard/> */}
+      {/* <CheckoutPaymentQR/> */}
+      {/* <Success/> */}
+      {/* <CheckoutShipping/>
+      <CheckoutShippingCard method="Fastest Delivery" methodPrice={150}/> */}
       {/* <CheckoutCard cardNumber='1234 5678 9101 1112' expire="02/27"/> */}
       {/* <CheckoutAddress className="outline-1" name='Teeramaet' address='49/547 Sammakorn Nimitmai Bangkok 10510 Thailand' tel='089-482-1873'></CheckoutAddress> */}
-      {/* <CheckoutButton currentStep = "payment" orderValue={5000} /> */}
-      <button className="btn btn:hover">Test</button>
+      {/* <CheckoutButton currentStep = "payment" orderValue={5000} />
+      <button className="btn btn:hover">Test</button> */}
     </div>
     </div>
 
   )
 
 }
+
+export default App

@@ -14,3 +14,18 @@ export const Order = [
         "totalPrice": {1 * productDetail.price}
     }
 ]
+
+export const Transaction = [
+    {
+        "orderId": "1",
+        "products": [
+            {productDetail:101},
+
+        ],
+        "orderDate": TIMEDATE,
+        "totalPrice": 500,
+        "Destination": "customer home detail",
+        "Shipping_method": 123
+    }
+
+]

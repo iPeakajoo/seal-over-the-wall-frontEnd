@@ -11,6 +11,7 @@ import CheckoutShipping from './CheckoutShipping';
 import CheckoutSummary from './CheckoutSummary';
 import { styled } from '@mui/material/styles';
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
+import Success from '../Success';
 
 //Custom Style for stepper
 const CustomConnector = styled(StepConnector)(({ theme }) => ({
@@ -108,7 +109,7 @@ export default function Checkout() {
       </Stepper>
       {activeStep === steps.length ? (
         <React.Fragment>
-          <CheckoutSummary/>
+          <Success/>
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
             <Box sx={{ flex: '1 1 auto' }} />
             <Button onClick={handleReset}>Reset</Button>
@@ -117,9 +118,8 @@ export default function Checkout() {
       ) : (
         <React.Fragment>
           {activeStep === 0 && <CheckoutShipping />}
-          {activeStep === 1 && <CheckoutPaymentQR />}
-          {activeStep === 2 && <CheckoutPaymentCard />}
-          {activeStep === steps.length && <CheckoutSummary />}
+          {activeStep === 1 && <CheckoutPaymentCard />}
+          {activeStep === 2 && <CheckoutSummary />}
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
             <Button
               color="inherit"
