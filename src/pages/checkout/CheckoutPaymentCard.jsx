@@ -8,19 +8,47 @@ const CheckoutPaymentCard = () => {
   const [cardData, setCardData] = useState({
       firstName:'',
       lastName:'',
-      street:'',
-      city:'',
-      postal:'',
-      state:'',
-      country:'',
-      email:'',
-      phone:'',
-      smsPromotion:'',
-      emailPromotion:'',
-      shipping:'',
+      cardNumber:'',
+      expDate:'',
+      cvv:'',
+      saveDetail:'',
     })
 
+    const handleOnchange = (e) => {
+      const {name, value, type, checked} = e.target;
+      setCardData((prev) => ({
+        ...prev,
+        [name]: type === 'checkbox' ? checked : value,
+      }));
+    }
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+  
+      if (
+        !cardData.firstName ||
+        !cardData.lastName ||
+        !cardData.cardNumber ||
+        !cardData.expDate ||
+        !cardData.cvv ||
+        !cardData.saveDetail
+      ) {
+        alert("Please fill out all required fields before continuing.");
+        return;
+      }
+      console.log("Submitting", cardData)
+      setCardData({
+        firstName:'',
+        lastName:'',
+        cardNumber:'',
+        expDate:'',
+        cvv:'',
+        saveDetail:'',
+      })
+    }
   const [method, setMethod] = useState("card")
+
+
   return (
     <main className="flex flex-row gap-[16px] mt-[48px] mx-[152px] mb-auto">
           {/* <!-- Left Content --> */}
@@ -42,7 +70,7 @@ const CheckoutPaymentCard = () => {
 
                 {/* If card */}
                 {method === "card" && (
-                <div className="flex flex-col items-start w-full h-auto">
+                <form onSubmit={handleSubmit} className="flex flex-col items-start w-full h-auto">
                     <button className="flex flex-row w-[full] h-[28px] items-center hover: cursor-pointer hover:scale-105 duration-300">
                         <img src="src/assets/images/circle-plus.png" className="inline-flex w-[20px] h-[20px] mt-0.5 mr-2.5"/>
                         <span className="inline-flex font-semibold text-xl px-2">Add other credit card</span>
@@ -54,26 +82,40 @@ const CheckoutPaymentCard = () => {
                       <input  type="text"
                               placeholder="First name"
                               name="firstName"
-                              value={cardData.firstName} 
+                              value={cardData.firstName}
+                              onChange={handleOnchange}
                               className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"/>
                     </div>
                     <div className="col-span-1">
                       <p className="mt-[24px] font-semibold text-[1.25rem]">Last name<span className="text-red-500">*</span></p>
                       <input  type="text"
                               placeholder="Last name"
+                              name="lastName"
+                              value={cardData.lastName}
+                              onChange={handleOnchange}
                               className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"/>
                     </div>
                     <div className="col-span-2">
                         <p className="font-semibold text-[1.25rem]">All transactions are encrypted and secure<span className="text-red-500">*</span></p>
                       <div className="flex flex-col gap-[24px]">
                         <input  type="text" 
-                                placeholder="Card number" 
+                                placeholder="Card number"
+                                name="cardNumber"
+                                value={cardData.cardNumber}
+                                onChange={handleOnchange}
+                                className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"/>
+                        
+                        <input  type="text" 
+                                placeholder="Expiration date (MM/YY)"
+                                name="expDate"
+                                value={cardData.expDate}
+                                onChange={handleOnchange}
                                 className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"/>
                         <input  type="text" 
-                                placeholder="Expiration date (MM/YY)" 
-                                className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"/>
-                        <input  type="text" 
-                                placeholder="Security code (CVV)" 
+                                placeholder="Security code (CVV)"
+                                name="cvv"
+                                value={cardData.cvv}
+                                onChange={handleOnchange}
                                 className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"/>
                       </div>
                     </div>
@@ -83,17 +125,21 @@ const CheckoutPaymentCard = () => {
                     </div>
                     </div>
                         <div className="flex flex-row gap-[8px] align-center items-center mt-6 mb-14">
-                            <input type="checkbox" className="w-[24px] h-[24px]"/>
+                            <input  type="checkbox"
+                                    name="saveDetail"
+                                    value={cardData.saveDetail}
+                                    onChange={handleOnchange}
+                                    className="w-[24px] h-[24px]"/>
                             <p className="text-xl font-semibold">Save my payment details for future purchases</p>
                         </div>
                         <div className="w-full">
-                        <CheckoutButton currentStep='payment' orderValue='1234'/>
+                        <button onSubmit={handleSubmit} className='w-full'><CheckoutButton currentStep='payment' orderValue='1234'/></button>
                             <p className="text-secondary-light-gray-500 mt-[12px] col-span-2 text-wrap">
                                 By continuing, I confirm that I have read and accept the&nbsp;
                                 <a href="#" className="underline">Terms and Conditions</a> and the&nbsp;
                                 <a href="#" className="underline">Privacy Policy</a>.</p>
                         </div>
-                  </div>
+                  </form>
                 )}
 
                 {/* If QR */}

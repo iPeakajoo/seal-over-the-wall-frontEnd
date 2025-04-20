@@ -22,9 +22,9 @@ function CheckoutButton({currentStep, orderValue, className}) {
         break;
   }
     return (
-    <button className={`bg-[#202020] w-full h-auto flex py-2 justify-center hover:scale-105 duration-300 text-[#FFFFFF] font-semibold text-2xl hover:cursor-pointer`}>
+    <div className={`bg-[#202020] w-full h-auto flex py-2 justify-center hover:scale-105 duration-300 text-[#FFFFFF] font-semibold text-2xl hover:cursor-pointer`}>
         {buttonText}
-    </button>
+    </div>
   )
 }
 
