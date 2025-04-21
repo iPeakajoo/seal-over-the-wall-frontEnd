@@ -15,6 +15,7 @@ import Product from "../pages/admin/Product"
 import Manage from "../pages/admin/Manage"
 import HomeUser from "../pages/user/HomeUser"
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,7 +27,8 @@ const router = createBrowserRouter([
       {path: "express-yourself", element: <ExpressYourself />},
       {path: "cart", element: <Cart />},
       {path: "login", element: <Login />},
-      {path: "register", element: <Register />}
+      {path: "register", element: <Register />},
+      {path: "checkout", element: <CheckOut/>}
     ]
   },
   {
