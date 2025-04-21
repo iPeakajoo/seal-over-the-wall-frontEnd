@@ -14,7 +14,7 @@ const BreadcrumbTop = () => {
       <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink className="text-lg">
+          <BreadcrumbLink className="text-lg hover:text-primary-blue-500">
             <Link to="/">Custommike</Link>
           </BreadcrumbLink>
         </BreadcrumbItem>

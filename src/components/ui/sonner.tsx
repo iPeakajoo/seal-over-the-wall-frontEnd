@@ -7,12 +7,15 @@ const Toaster = ({ ...props }: ToasterProps) => {
   return (
     <Sonner
       theme={theme as ToasterProps["theme"]}
-      className="toaster group"
+      className="toaster group "
       style={
         {
-          "--normal-bg": "var(--popover)",
-          "--normal-text": "var(--popover-foreground)",
-          "--normal-border": "var(--border)",
+          "--normal-bg": "#1E293B",            // พื้นหลัง
+      "--normal-text": "#F1F5F9",          // สีข้อความ
+      "--normal-border": "#334155",        // สีเส้นขอบ
+      "--success-bg": "#22c55e",           // toast.success
+      "--error-bg": "#ef4444",             // toast.error
+      "--info-bg": "#3b82f6",              // toast.info
         } as React.CSSProperties
       }
       {...props}

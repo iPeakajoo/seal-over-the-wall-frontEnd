@@ -1,15 +1,9 @@
 import { useEffect, useState } from "react";
-
 import logo from "../../assets/images/custommike-navbar-logo.svg";
-
 import { BiHeart, BiUser, BiCartAlt, BiGlobe } from "react-icons/bi";
-
 import ExpandingSearch from "./ExpandingSearch";
-
 import { Link } from "react-router-dom";
-
 import DropdownMenu from "./DropdownMenu";
-
 import ProfileMenu from "./ProfileMenu";
 
 const MainNav = () => {
@@ -18,7 +12,7 @@ const MainNav = () => {
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      setScrolled(offset > 10); // เมื่อ scroll มากกว่า 10px ให้เปลี่ยนพื้นหลัง
+      setScrolled(offset > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -52,23 +46,20 @@ const MainNav = () => {
               </li>
               <li>
                 <Link to="#">
-                  <BiHeart className="w-6 h-6" />
+                  <BiHeart className="w-6 h-6 hover:text-primary-blue-500" />
                 </Link>
               </li>
               <li>
                 <ProfileMenu />
-                {/* <Link to="#">
-                  <BiUser className="w-6 h-6" />
-                </Link> */}
               </li>
               <li>
                 <Link to="#">
-                  <BiCartAlt className="w-6 h-6" />
+                  <BiCartAlt className="w-6 h-6 hover:text-primary-blue-500" />
                 </Link>
               </li>
               <li>
                 <Link to="#">
-                  <BiGlobe className="w-6 h-6" />
+                  <BiGlobe className="w-6 h-6 hover:text-primary-blue-500" />
                 </Link>
               </li>
             </ul>

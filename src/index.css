@@ -4,6 +4,8 @@
 
 @import "tailwindcss";
 @import "tw-animate-css";
+/* @plugin "daisyui"; */
+
 
 /* Theme Colors */
 @theme {
@@ -79,7 +81,7 @@ body {
 .search-bar {
   --size: 40px;
   --padding: 1px;
-  --expanded-width: 250px;
+  --expanded-width: 280px;
 
   display: flex;
   justify-content: flex-end;
@@ -127,6 +129,22 @@ body {
   aspect-ratio: 1;
   cursor: pointer;
   border: none;
+}
+
+
+@layer utilities {
+  @keyframes slide-left {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-slide-left {
+    animation: slide-left 8s linear infinite;
+  }
 }
 
 
@@ -178,7 +196,5 @@ body{
   padding-top: 100px;
   font-family: var(--font-geist);
 }
-
-
 
 
