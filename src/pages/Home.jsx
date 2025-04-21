@@ -1,5 +1,6 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { motion } from "framer-motion";
 
 import Hero from "../components/HomePage/Hero";
 import ExpressTheWorld from "../components/HomePage/ExpressTheWorld";
@@ -9,7 +10,7 @@ import OwnIt from "../components/HomePage/OwnIt";
 import SaleSlide from "../components/HomePage/SaleSlide";
 
 import { useEffect } from "react";
-import { motion } from "framer-motion";
+
 
 const Home = () => {
   useEffect(() => {
