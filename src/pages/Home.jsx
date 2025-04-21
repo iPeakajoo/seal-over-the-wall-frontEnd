@@ -52,9 +52,9 @@ const Home = () => {
       >
         <TodayTrend />
       </motion.div>
-      
-        <Banner />
-      
+
+      <Banner />
+
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -64,8 +64,8 @@ const Home = () => {
       >
         <OwnIt />
       </motion.div>
-      
-        <SaleSlide />
+
+      <SaleSlide />
     </>
   );
 };
