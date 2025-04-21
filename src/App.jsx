@@ -1,8 +1,6 @@
 import AppRoutes from "./routes/AppRoutes"
 
 
-
-
 const App = () => {
   return (
     <AppRoutes/>
@@ -11,3 +9,4 @@ const App = () => {
 }
 
 export default App
+
