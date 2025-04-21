@@ -19,9 +19,9 @@ import {BiUser } from "react-icons/bi";
 const ProfileMenu = () => {
   return (
     <div>
-      <Menubar >
-      <MenubarMenu className="" >
-        <MenubarTrigger className="border-none"><BiUser className="w-6 h-6" /></MenubarTrigger>
+      <Menubar className="border-none">
+      <MenubarMenu  >
+        <MenubarTrigger ><BiUser className="w-6 h-6 hover:text-primary-blue-500 border-none" /></MenubarTrigger>
         <MenubarContent className="border-1 border-gray-200 bg-white">
         <MenubarItem inset className="text-lg ">Somchai Kitkardee</MenubarItem>
         <MenubarItem inset >Somchai.K@gmail.com</MenubarItem>

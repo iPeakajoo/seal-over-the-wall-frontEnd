@@ -28,12 +28,12 @@ export default function MyCarousel() {
   }, [])
 
   return (
-    <div className="w-full max-w-xs overflow-hidden rounded-xl border-none">
-      <Carousel className="w-full">
-        <CarouselContent>
-          <CarouselItem>
-            <Card>
-              <CardContent className="h-[300px] w-[229px] p-0 overflow-hidden border-none">
+    <div className="w-full max-w-xs overflow-hidden rounded-xl ">
+      <Carousel className="w-full ">
+        <CarouselContent className="">
+          <CarouselItem className="">
+            <Card className="border-none">
+              <CardContent className="h-full w-full p-0 overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={images[index]}
