@@ -22,7 +22,7 @@ export const variants = [
         }))
       );
     }),
-  
+
     // Variants for Cups (productId: 2, 5, 8, ..., 26)
     ...[2, 5, 8, 11, 14, 17, 20, 23, 26].flatMap(productId => {
       const styleFolder = {

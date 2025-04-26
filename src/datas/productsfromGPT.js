@@ -7,7 +7,31 @@ export const products = [
       title: "Prove Them Wrong T-Shirt",
       description: "Go further, we can be even worse.",
       basePrice: 499,
-      variants: []
+      variants: [{"size": ["s","m","l"],
+                 "color": [
+                          {"blackColor": [{"colorName": "black",
+                                            "shirtImage": ["src/assets/images/Products/t-shirt/prove/prove-shirt-black-front.png",
+                                                           "src/assets/images/Products/t-shirt/prove/prove-shirt-black-back.png",
+                                                          ],
+                                            "colorCode": "#202020"}]},
+                           {"whiteColor": [{"colorName": "white",
+                                            "shirtImage": ["src/assets/images/Products/t-shirt/prove/prove-shirt-white-front.png",
+                                                           "src/assets/images/Products/t-shirt/prove/prove-shirt-white-back.png",
+                                                          ],
+                                            "colorCode": "#FFFDFD"}]},
+                           {"greyColor": [{"colorName": "gray",
+                                            "shirtImage": ["src/assets/images/Products/t-shirt/prove/prove-shirt-gray-front.png",
+                                                           "src/assets/images/Products/t-shirt/prove/prove-shirt-gray-back.png",
+                                                          ],
+                                            "colorCode": "#5A5959"}]},
+                           {"blueColor": [{"colorName": "blue",
+                                            "shirtImage": ["src/assets/images/Products/t-shirt/prove/prove-shirt-blue-front.png",
+                                                           "src/assets/images/Products/t-shirt/prove/prove-shirt-blue-back.png",
+                                                          ],
+                                            "colorCode": "#1A2C8B"}]},
+                            ]}
+
+              ]
     },
     {
       productId: 2,

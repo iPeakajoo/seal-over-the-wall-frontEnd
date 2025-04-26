@@ -2,7 +2,7 @@ import React from 'react'
 import CheckoutButton from '../../components/CheckoutButtonCard'
 import { useState } from 'react'
 
-const CheckoutShipping = () => {
+const CheckoutShipping = ({onNext}) => {
 
   const [shippingData, setShippingData] = useState({
     firstName:'',
@@ -45,8 +45,10 @@ const CheckoutShipping = () => {
       !shippingData.shipping
     ) {
       alert("Please fill out all required fields before continuing.");
-      return;
+      return
     }
+
+
 
     console.log("Submitting", shippingData)
     setShippingData({
@@ -63,8 +65,11 @@ const CheckoutShipping = () => {
     smsPromotion:'',
     emailPromotion:'',
     shipping:'',
-    })
+    });
+
+    onNext();
   }
+
 
   return (
   <>
@@ -260,7 +265,9 @@ const CheckoutShipping = () => {
               </label>
             </div>
 
-            <button onClick={handleSubmit}><CheckoutButton currentStep='shipping'/></button>
+            <button type="submit">
+
+              <CheckoutButton currentStep='shipping'/></button>
               <p className="text-gray-500 mt-[12px]">
                 By continuing, I confirm that I have read and accept the&nbsp;
                 <a href="#" className="underline">Terms and Conditions</a> and the&nbsp;

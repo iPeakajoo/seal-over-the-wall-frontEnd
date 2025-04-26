@@ -3,7 +3,7 @@ import CheckoutButton from '../../components/CheckoutButtonCard'
 import { useState } from 'react'
 import CheckoutPaymentQR from './CheckoutPaymentQR'
 
-const CheckoutPaymentCard = () => {
+const CheckoutPaymentCard = ({onNext}) => {
 
   const [cardData, setCardData] = useState({
       firstName:'',
@@ -24,14 +24,13 @@ const CheckoutPaymentCard = () => {
 
     const handleSubmit = (e) => {
       e.preventDefault();
-  
+
       if (
         !cardData.firstName ||
         !cardData.lastName ||
         !cardData.cardNumber ||
         !cardData.expDate ||
-        !cardData.cvv ||
-        !cardData.saveDetail
+        !cardData.cvv
       ) {
         alert("Please fill out all required fields before continuing.");
         return;
@@ -45,6 +44,7 @@ const CheckoutPaymentCard = () => {
         cvv:'',
         saveDetail:'',
       })
+      onNext()
     }
   const [method, setMethod] = useState("card")
 
@@ -133,7 +133,7 @@ const CheckoutPaymentCard = () => {
                             <p className="text-xl font-semibold">Save my payment details for future purchases</p>
                         </div>
                         <div className="w-full">
-                        <button onSubmit={handleSubmit} className='w-full'><CheckoutButton currentStep='payment' orderValue='1234'/></button>
+                        <button type='submit' className='w-full'><CheckoutButton currentStep='payment' orderValue='1234'/></button>
                             <p className="text-secondary-light-gray-500 mt-[12px] col-span-2 text-wrap">
                                 By continuing, I confirm that I have read and accept the&nbsp;
                                 <a href="#" className="underline">Terms and Conditions</a> and the&nbsp;

@@ -4,7 +4,7 @@ import Shop from "../pages/Shop"
 import HowtoWork from "../pages/HowtoWork"
 import ExpressYourself from "../pages/ExpressYourself"
 import Cart from "../pages/Cart"
-import CheckOut from "../pages/checkout/CheckOut"
+import CheckOut from "../pages/checkout/Checkout"
 import Login from "../pages/auth/Login"
 import Register from "../pages/auth/Register"
 import Layout from "../layouts/Layout"
@@ -33,6 +33,7 @@ const router = createBrowserRouter([
       {path: "register", element: <Register />},
       {path: "checkout", element: <CheckOut/>},
       {path: "signup", element: <Signup />},
+
 
     ]
   },
