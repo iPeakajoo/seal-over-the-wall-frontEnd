@@ -3,6 +3,8 @@ import BreadcrumbTop from "../components/mainMenu/BreadcrumbTop";
 import ProductSelection from '../components/createDesignPage/ProductSelection';
 import ColorSelection from '../components/createDesignPage/ColorSelection';
 import Printareas from '../components/createDesignPage/Printareas';
+import TShirtTemplate from '../components/createDesignPage/TShirtTemplate';
+import CreateDesignButton from '../components/createDesignPage/CreateDesignButton';
 
 
 function CreateDesign() {
@@ -20,8 +22,16 @@ function CreateDesign() {
         <ProductSelection />
     </div>
 
-    <div className='pl-10'>
+    <div className='pl-10 flex justify-between items-center mt-10 mr-10'>
         <ColorSelection />
+        <CreateDesignButton />
+    </div>
+    
+    <div className='flex justify-center mt-10'>
+        <TShirtTemplate />
+    </div>
+    <div>
+        
     </div>
     
     <div className='mt-[56px] pl-10'>
