@@ -3,7 +3,7 @@ import CheckoutButton from '../../components/CheckoutButtonCard'
 import { useState } from 'react'
 import CheckoutPaymentQR from './CheckoutPaymentQR'
 
-const CheckoutPaymentCard = ({onNext}) => {
+const CheckoutPaymentCard = ({onNext,updateData}) => {
 
   const [cardData, setCardData] = useState({
       firstName:'',
@@ -35,6 +35,9 @@ const CheckoutPaymentCard = ({onNext}) => {
         alert("Please fill out all required fields before continuing.");
         return;
       }
+
+      updateData(cardData);
+
       console.log("Submitting", cardData)
       setCardData({
         firstName:'',
@@ -42,7 +45,7 @@ const CheckoutPaymentCard = ({onNext}) => {
         cardNumber:'',
         expDate:'',
         cvv:'',
-        saveDetail:'',
+        saveDetail:false,
       })
       onNext()
     }

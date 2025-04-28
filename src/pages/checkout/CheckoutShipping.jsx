@@ -2,7 +2,7 @@ import React from 'react'
 import CheckoutButton from '../../components/CheckoutButtonCard'
 import { useState } from 'react'
 
-const CheckoutShipping = ({onNext}) => {
+const CheckoutShipping = ({onNext, updateData}) => {
 
   const [shippingData, setShippingData] = useState({
     firstName:'',
@@ -45,12 +45,13 @@ const CheckoutShipping = ({onNext}) => {
       !shippingData.shipping
     ) {
       alert("Please fill out all required fields before continuing.");
-      return
+      return;
     }
 
 
-
     console.log("Submitting", shippingData)
+    updateData(shippingData)
+
     setShippingData({
     firstName:'',
     lastName:'',
