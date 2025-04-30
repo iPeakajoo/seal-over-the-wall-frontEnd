@@ -1,44 +1,52 @@
 import React from 'react'
-import BreadcrumbTop from "../components/mainMenu/BreadcrumbTop";
 import ProductSelection from '../components/createDesignPage/ProductSelection';
 import ColorSelection from '../components/createDesignPage/ColorSelection';
-import Printareas from '../components/createDesignPage/Printareas';
 import TShirtTemplate from '../components/createDesignPage/TShirtTemplate';
 import CreateDesignButton from '../components/createDesignPage/CreateDesignButton';
+import UploadDesignBox from '../components/createDesignPage/UploadDesignBox';
+import SelectedProduct from '../components/createDesignPage/SelectedProduct';
+import Test from "../components/createDesignPage/Test";
+import Test2 from "../components/createDesignPage/Test2";
+import Walkthrough from '../components/createDesignPage/Walkthrough';
+
 
 
 function CreateDesign() {
+
   return (
     <>
-    <div className="mt-25 mb-4 pl-10">
-        <BreadcrumbTop  />
-    </div>
-
     <div className="font-semibold flex justify-center items-center h-16 bg-gray-200 mb-7">
         Stepper Placeholder
     </div>
 
-    <div className='flex justify-center'>
+    <div className='step-1 flex justify-center mt-20 mb-20'>
         <ProductSelection />
     </div>
 
-    <div className='pl-10 flex justify-between items-center mt-10 mr-10'>
+    <div className='step-2 justify-center mx-283 mt-25 absolute'>
+        <UploadDesignBox />
+    </div>
+
+    <div className='px-40 flex justify-between items-start'>
         <ColorSelection />
-        <CreateDesignButton />
-    </div>
-    
-    <div className='flex justify-center mt-10'>
         <TShirtTemplate />
+        <button onClick={() => console.log("Upload clicked")} className='flex items-center gap-2 p-2 rounded-md'>
+            <CreateDesignButton />
+        </button>
     </div>
-    <div>
-        
+
+    <div className='flex justify-center mt-2'>
+        <SelectedProduct />
     </div>
-    
-    <div className='mt-[56px] pl-10'>
-        <Printareas />
-    </div>
+    {/* <section>
+        <Test />
+        <Test2 />
+    </section> */}
+
+
+    <Walkthrough />
     </>
   )
 }
 
-export default CreateDesign
+export default CreateDesign;

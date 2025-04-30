@@ -1,12 +1,11 @@
 import { Outlet } from 'react-router-dom'
-import MainNav from '../components/mainMenu/MainNav' 
-import Footer from '../components/mainMenu/Footer'
 import { Toaster } from "@/components/ui/sonner"
+import CreateDesignNav from '../components/ui/CreateDesignNav'
 
 const Layout = () => {
   return (
     <div>
-      <MainNav />
+      <CreateDesignNav />
       <Outlet />
       <Toaster />
     </div>
