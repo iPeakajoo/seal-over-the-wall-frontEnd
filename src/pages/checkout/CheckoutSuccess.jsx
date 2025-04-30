@@ -3,11 +3,14 @@ import CheckoutAddressCard from '../../components/CheckoutAddressCard'
 import OrderStatusCard from '../../components/OrderStatusCard'
 import TotalCard from '../../components/TotalCard'
 import ProductDataStore from '../../stores/productDataStore'
+import SaleSlide from '../../components/HomePage/SaleSlide'
+
 
 
 const Success = ({orderId}) => {
     const items = ProductDataStore((state) => state.orders)
         return (
+            <>
             <div className='flex flex-col content-center w-full mx-[152px]'>
                             <article className='w-full'>
                             <div className="space-y-4">
@@ -16,12 +19,12 @@ const Success = ({orderId}) => {
                                 <h2 className="text-left text-[32px] font-semibold mb-8 pt-2">Order Summary</h2>
                             </div>
                         </article>
-                <section className="flex outline-1 outline-red-500 gap-4">
+                <section className="flex flex-row gap-4">
+                        <div className="flex flex-row w-[936px] min-h-[875px] h-auto">
+                            <div className="product w-full flex flex-col border border-[#A1A1AA] px-6 sm:px-12 md:px-20 lg:px-28 xl:px-36 py-4 sm:py-6 md:py-10 lg:py-12 xl:py-14 gap-y-6 mb-40">
                     {items.orderProduct.map((product) => (
                         <React.Fragment key={product.productId}>
                         {/* Products detail */}
-                        <div className="flex flex-row w-[936px] min-h-[875px] h-auto">
-                            <div className="product w-full flex flex-col border border-[#A1A1AA] px-6 sm:px-12 md:px-20 lg:px-28 xl:px-36 py-4 sm:py-6 md:py-10 lg:py-12 xl:py-14 gap-y-6 mb-40">
                                 <div className="flex flex-wrap outline-1 items-center w-full max-w-full hover:shadow-lg hover:scale-105 hover:transition duration-300 cursor-pointer">
                                     <div className="w-41 h-41 flex-shrink-0">
                                         <img
@@ -46,18 +49,18 @@ const Success = ({orderId}) => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
                         </React.Fragment>
                     ))}
+                            </div>
+                        </div>
                     {/* Other detail*/}
                     <div className='flex flex-col gap-4 w-[664px] min-h[875px]'>
 
                         {/* Shipping detail */}
                         <div className='border border-[#A1A1AA] w-full p-6'>
-                            <CheckoutAddressCard    name={items.addressDetail.name} 
-                                                    address={items.addressDetail.address} 
-                                                    tel={items.addressDetail.tel} 
+                            <CheckoutAddressCard    name={items.addressDetail.name}
+                                                    address={items.addressDetail.address}
+                                                    tel={items.addressDetail.tel}
                                                     />
                         </div>
 
@@ -80,7 +83,9 @@ const Success = ({orderId}) => {
 
                     </div>
                 </section>
-    </div>
+                </div>
+                <SaleSlide/>
+    </>
   )
 }
 

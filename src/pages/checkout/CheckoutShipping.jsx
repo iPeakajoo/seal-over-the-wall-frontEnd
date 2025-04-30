@@ -63,8 +63,8 @@ const CheckoutShipping = ({onNext, updateData}) => {
     country:'',
     email:'',
     phone:'',
-    smsPromotion:'',
-    emailPromotion:'',
+    smsPromotion:false,
+    emailPromotion:false,
     shipping:'',
     });
 
@@ -178,7 +178,7 @@ const CheckoutShipping = ({onNext, updateData}) => {
                       name="smsPromotion"
                       checked={shippingData.smsPromotion}
                       onChange={handleOnchange}
-                      className="border-1 border-[#A1A1AA] w-[24px] h-[24px]"
+                      className="border-1 border-[#a1aaa2] w-[24px] h-[24px]"
                       />
               <p className="text-xl font-semibold">Please send me SMS shipping updates about my order</p>
             </div>
