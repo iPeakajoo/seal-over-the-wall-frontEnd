@@ -17,7 +17,8 @@ import HomeUser from "../pages/user/HomeUser";
 import ProductDetail from "../pages/ProductDetail";
 import Signup from "../pages/Signup";
 import CreateDesign from "../pages/CreateDesign";
-import CreateDesignLayout from "../layouts/CreateDesignLayout"; // Make sure this is created & imported
+import CreateDesignLayout from "../layouts/CreateDesignLayout";
+import CollectDetails from "../pages/CollectDetails";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,14 @@ const router = createBrowserRouter([
     element: <CreateDesignLayout />,
     children: [
       { index: true, element: <CreateDesign /> },
+    ]
+  },
+
+  {
+    path: "/collectdetails",
+    element: <CreateDesignLayout />,
+    children: [
+      { index: true, element: <CollectDetails /> },
     ]
   }
 ]);

@@ -8,6 +8,8 @@ import SelectedProduct from '../components/createDesignPage/SelectedProduct';
 import Test from "../components/createDesignPage/Test";
 import Test2 from "../components/createDesignPage/Test2";
 import Walkthrough from '../components/createDesignPage/Walkthrough';
+import NextStepButton from '../components/createDesignPage/NextStepButton';
+import SaveButton from '../components/createDesignPage/SaveButton';
 
 
 
@@ -19,22 +21,32 @@ function CreateDesign() {
         Stepper Placeholder
     </div>
 
-    <div className='step-1 flex justify-center mt-20 mb-20'>
+    <div className='step-1 flex justify-center mt-6 mb-6'>
         <ProductSelection />
     </div>
+    <div className='absolute w-full flex justify-center items-center'>
+    <div className='w-full px-40 flex justify-between items-start'>
+        <ColorSelection />
+        <div className="flex justify-end items-center gap-4 mt-6">
+            <button>
+            <SaveButton />
+            </button>
+            
+            <button>
+            <NextStepButton />
+            </button>
 
-    <div className='step-2 justify-center mx-283 mt-25 absolute'>
+        </div>
+        </div>
+    </div>
+    <div className='relative'>
+    <div className='step-2 w-full flex justify-center mt-25 absolute'>
         <UploadDesignBox />
     </div>
-
-    <div className='px-40 flex justify-between items-start'>
-        <ColorSelection />
+    <div className='w-full flex justify-center items-center'>
         <TShirtTemplate />
-        <button onClick={() => console.log("Upload clicked")} className='flex items-center gap-2 p-2 rounded-md'>
-            <CreateDesignButton />
-        </button>
+        </div>
     </div>
-
     <div className='flex justify-center mt-2'>
         <SelectedProduct />
     </div>

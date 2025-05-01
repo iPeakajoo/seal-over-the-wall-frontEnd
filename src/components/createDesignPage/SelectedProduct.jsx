@@ -7,8 +7,8 @@ import shirtgray from "../../assets/images/Products/t-shirt/prove-them/prove-the
 function SelectedProduct() {
   return (
     <div className='flex flex-col items-center justify-center w-[1344px] h-[400px]'>
-     <h2 className='font-semibold text-2xl mb-4'>
-      Selected Products
+     <h2 className='font-semibold text-xl mb-4'>
+      Created Products
      </h2>
       <div className='flex gap-12'>
           <img src={shirtblack} alt="Black T-shirt" className='w-[280px] h-[280px]' />
