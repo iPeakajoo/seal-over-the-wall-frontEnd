@@ -1,5 +1,5 @@
-import MainNav from "../components/MainNav"
-import Footer from "../components/Footer"
+
+
 import CartBox from "../components/CartBox"
 import CheckedBox from "../components/ui/CheckedBox"
 import GiftCard from "../components/GiftCard"
@@ -10,7 +10,6 @@ import AdBox from "../components/AdBox"
 const Cart = () => {
   return (
     <div className="flex flex-col">
-      <MainNav/>
       <h2 className="text-center text-4xl font-bold mt-[132px]">Cart</h2>
         <div className="flex justify-center items-center w-full pl-[88px]">
           <div className="w-[1072px] flex justify-between mt-[50px] pb-[25px] border-b-2 border-secondary-light-gray-300">
@@ -65,7 +64,6 @@ const Cart = () => {
       </div>
       <AdBox />
       <Questions />
-      <Footer />
     </div>
   )
 }

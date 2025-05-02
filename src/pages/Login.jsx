@@ -1,10 +1,19 @@
-import React from 'react'
+import React from 'react';
+import Carousel from '../components/Carousel';
 
+import fetchthis from "../assets/images/Products/t-shirt/fetch-this/fetch-front-black.png";
+import thinkoutside from "../assets/images/Products/bags/think-out-side/think-out-side-blue.png";
+import cupcustommike from "../assets/images/Products/cup/custom-mike/custom-mike-gray.png";
+
+const slides = [
+    fetchthis,thinkoutside,cupcustommike
+]
 
 export default function Login() {
+
   return (
     <div className="flex items-center justify-center">
-        <div className="w-[1440px] h-[1024px] grid grid-cols-2 shadow-xl">
+        <div className="w-[1440px] h-[1024px] grid grid-cols-2 shadow-xl my-[50px]">
             <div className="flex col-span-1 w-full h-full items-center justify-center">
                 <div className="flex flex-col items-center w-[430px] mt-[48px]">
                     <img src="src\assets\images\custommike-navbar-logo.svg" className="w-[139px] h-[18px] mb-[185px]"/>
@@ -45,14 +54,12 @@ export default function Login() {
                     <p className="mt-[185px]">Don't have an account? <span>Sign Up</span></p>
                 </div>
             </div>
-            <div className="col-span-1 w-full h-full bg-[#ECEFE8]">
-                <div className="w-full h-full relative">
-                    <div className="absolute flex w-full h-full justify-center items-center">
-                        <img src="src\assets\images\fetch-front-black.png" className="w-[462px] h-[462px]"/>
-                    </div>
-                    <h2 style={{ fontFamily: 'Bebas Neue, sans-serif' }} className="absolute w-[200px] text-[6rem] font-semibold tracking-['-3.84em']">FETCH T-SHIRT</h2>
-                    
-                </div>
+            <div className="col-span-1 w-full h-full">
+                <Carousel>
+                    {slides.map((s) => (
+                        <img src={s} />
+                    ))}
+                </Carousel>
             </div>
         </div>
     </div>
