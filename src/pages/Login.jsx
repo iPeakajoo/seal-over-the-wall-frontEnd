@@ -55,7 +55,7 @@ export default function Login() {
                 </div>
             </div>
             <div className="col-span-1 w-full h-full">
-                <Carousel>
+                <Carousel autoSlide={true} autoSlideInterval={5000}>
                     {slides.map((s) => (
                         <img src={s} />
                     ))}
