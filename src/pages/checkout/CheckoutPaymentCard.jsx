@@ -53,10 +53,10 @@ const CheckoutPaymentCard = ({onNext,updateData}) => {
 
 
   return (
-    <main className="flex flex-row gap-[16px] mt-[48px] mx-[152px] mb-auto">
+    <main className="flex flex-row gap-[16px] mx-[152px] mb-auto">
           {/* <!-- Left Content --> */}
           <div className="flex flex-col w-[1072px] mx-auto mb-10">
-           <h1 className="mt-[40px] text-[2rem] font-semibold col-span-2">Payment methods</h1>
+           <h1 className="text-[2rem] font-semibold col-span-2">Payment methods</h1>
                 <div className="flex flex-row gap-[32px] mt-[16px] mb-6 ">
                   {/* Card logo */}
                     <button onClick={() => {setMethod("card")}} className="flex justify-center  w-[140px] h-[57px]border-zinc-400 hover:border-[2px] hover:border-[#334DD8] ">

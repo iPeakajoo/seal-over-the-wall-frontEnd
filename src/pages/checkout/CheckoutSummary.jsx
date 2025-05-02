@@ -12,7 +12,7 @@ const CheckoutSummary = ({onNext, onEdit, checkoutData}) => {
 
 
   return (
-    <>
+    
     <div id ="summary" className="flex flex-col w-[1072px] gap-2 items-center mx-auto">
 
 
@@ -42,7 +42,7 @@ const CheckoutSummary = ({onNext, onEdit, checkoutData}) => {
             <a href="#" className="underline inline-flex">Privacy Policy</a>.</p>
           </div>
           </div>
-    </>
+    
   )
 }
 

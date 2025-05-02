@@ -1,5 +1,4 @@
 // products.js
-product.color.blueColor.colorCode
 
 export const products = [
     {
