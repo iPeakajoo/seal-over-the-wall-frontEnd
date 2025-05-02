@@ -4,7 +4,7 @@ import tshirtTemplate from "../../assets/images/create-design-pages/selection-t-
 function TShirtTemplate() {
   return (
 
-    <div className='flex justify-center items-center'>
+    <div className='flex justify-center items-center m-1'>
       <img src={tshirtTemplate} alt="T-shirt template" className='w-[607.31px] h-[480px]' />
     </div>
   );

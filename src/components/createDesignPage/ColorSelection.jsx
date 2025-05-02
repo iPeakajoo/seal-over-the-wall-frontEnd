@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Printareas from './Printareas';
 
+
 function ColorSelection() {
   const [selected, setSelected] = useState([]);
 
@@ -40,11 +41,12 @@ function ColorSelection() {
           />
         ))}
       </div>
-      <div className='step-3 mt-10'>
+      {<div className='step-3 mt-10'>
       <Printareas />
-      </div>
+      </div>}
     </div>
   );
+  
 }
 
 export default ColorSelection;
