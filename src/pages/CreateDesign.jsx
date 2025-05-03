@@ -49,10 +49,10 @@ function CreateDesign() {
     </div>
 
 
-    {/* <section>
+    <section>
         <Test />
         <Test2 />
-    </section> */}
+    </section>
 
     <Walkthrough />
     </>
