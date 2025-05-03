@@ -59,16 +59,9 @@ const router = createBrowserRouter([
     element: <CreateDesignLayout />,
     children: [
       { index: true, element: <CreateDesign /> },
+      { path: "collectdetails", element: <CollectDetails /> },
     ]
   },
-
-  {
-    path: "/collectdetails",
-    element: <CreateDesignLayout />,
-    children: [
-      { index: true, element: <CollectDetails /> },
-    ]
-  }
 ]);
 
 const AppRoutes = () => {
