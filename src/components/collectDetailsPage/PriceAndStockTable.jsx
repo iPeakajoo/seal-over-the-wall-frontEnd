@@ -1,7 +1,7 @@
 import React from 'react'
-import tshirt from "../../assets/images/Products/t-shirt/prove-them/prove-them-front-white.png"
-import bags from "../../assets/images/Products/bags/prove-them/prove-them-white.png"
-import cups from "../../assets/images/Products/cup/prove them/prove-them-white.png"
+import tshirt from "../../assets/images/Products/shirt/prove/prove-shirt-white-front.png"
+import bags from "../../assets/images/Products/bag/prove/prove-bag-white-front.png"
+import cups from "../../assets/images/Products/cup/prove/prove-cup-white-front.png"
 import line from "../../assets/images/collect-details-pages/Line.svg"
 
 function PriceAndStockTable() {
