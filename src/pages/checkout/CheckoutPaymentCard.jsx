@@ -107,7 +107,7 @@ const CheckoutPaymentCard = ({onNext,updateData}) => {
                                 value={cardData.cardNumber}
                                 onChange={handleOnchange}
                                 className="w-full h-[56px] border-secondary-light-gray-500 border-[1.25px] p-[20px]"/>
-                        
+
                         <input  type="text" 
                                 placeholder="Expiration date (MM/YY)"
                                 name="expDate"
