@@ -1,13 +1,14 @@
 import React from 'react'
-import CheckoutAddress from '../../components/CheckoutAddressCard'
-import CheckoutShipping from '../../components/CheckoutShippingCard'
-import CheckoutCard from '../../components/CheckoutCardCard'
-import CheckoutButton from '../../components/CheckoutButtonCard'
+import CheckoutAddressCard from '../../components/CheckoutAddressCard'
+import CheckoutShippingCard from '../../components/CheckoutShippingCard'
+import CheckoutCardCard from '../../components/CheckoutCardCard'
+import CheckoutButtonCard from '../../components/CheckoutButtonCard'
 
 
 
 
 const CheckoutSummary = ({onNext, onEdit, checkoutData}) => {
+  console.log(checkoutData)
 
 
 
@@ -17,22 +18,22 @@ const CheckoutSummary = ({onNext, onEdit, checkoutData}) => {
 
 
             <div id ="shippingInformation" className="flex justify-between border-[1.25px] p-6 w-full h-auto items-center border-secondary-light-gray-500">
-              <CheckoutAddress name={`${checkoutData.shippingInfo.firstName} ${checkoutData.shippingInfo.lastName}`} address={`${checkoutData.shippingInfo.street}, ${checkoutData.shippingInfo.specify}, ${checkoutData.shippingInfo.city}, ${checkoutData.shippingInfo.postal}, ${checkoutData.shippingInfo.state}, ${checkoutData.shippingInfo.country}`} tel={checkoutData.shippingInfo.phone}/>
+              <CheckoutAddressCard name={`${checkoutData.shippingInfo.firstName} ${checkoutData.shippingInfo.lastName}`} address={`${checkoutData.shippingInfo.street}, ${checkoutData.shippingInfo.specify}, ${checkoutData.shippingInfo.city}, ${checkoutData.shippingInfo.postal}, ${checkoutData.shippingInfo.state}, ${checkoutData.shippingInfo.country}`} tel={checkoutData.shippingInfo.phone}/>
               <button onClick={onEdit} className="text-lg font-[500] items-center hover:cursor-pointer hover:scale-100 duration-300 p-4">Edit</button>
             </div>
 
             <div id ="shippingInformation" className="flex justify-between border-[1.25px] p-6 w-full h-auto items-center border-secondary-light-gray-500">
-              <CheckoutShipping method={checkoutData.shippingInfo.shipping === "fastest" ? "Fastest Delivery" : checkoutData.shippingInfo.shipping === "standard" ? "Standard Delivery" : "Cash on Delivery (COD)"}
+              <CheckoutShippingCard method={checkoutData.shippingInfo.shipping === "fastest" ? "Fastest Delivery" : checkoutData.shippingInfo.shipping === "standard" ? "Standard Delivery" : "Cash on Delivery (COD)"}
                methodPrice={checkoutData.shippingInfo.shipping === "fastest" ? 120 : checkoutData.shippingInfo.shipping === "standard" ? 60 : 120}
                 date ="March 15 2025" />
             </div>
 
             <div id ="paymentMethod" className=" border-[1.25px] border-secondary-light-gray-500 p-6 w-full h-auto mb-14 ">
-              <CheckoutCard cardNumber={`${checkoutData.paymentInfo.cardNumber}`} expire={`${checkoutData.paymentInfo.expDate}`}/>
+              <CheckoutCardCard cardNumber={`${checkoutData.paymentInfo.cardNumber}`} expire={`${checkoutData.paymentInfo.expDate}`}/>
             </div>
 
             <button onClick={onNext} className='w-full'>
-              <CheckoutButton currentStep='summary'/>
+              <CheckoutButtonCard currentStep='summary'/>
             </button>
 
           <div className='items-start flex w-full'>
