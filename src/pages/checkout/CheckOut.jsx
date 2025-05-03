@@ -77,6 +77,7 @@ function CheckOut() {
       {renderTitle()}
       <CheckoutStepper step={step} setStep={setStep} />
       {renderStepContent()}
+      <p></p>
     </div>
   );
 }
