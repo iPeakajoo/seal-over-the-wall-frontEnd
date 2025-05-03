@@ -147,11 +147,11 @@ export const products = [
     "productId": 1,
     "name": "More Espresso",
     "productType": "shirt",
-    "color": "black",
+    "color": ["black"],
     "price": 499,
     "reviews": 4.5,
     "reviewCount": 10,
-    "imageSource": product1,
+    "imageSource": product1
   },
   {
     "productId": 2,
