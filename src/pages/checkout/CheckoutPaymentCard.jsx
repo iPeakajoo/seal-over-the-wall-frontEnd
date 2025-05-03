@@ -3,7 +3,7 @@ import CheckoutButton from '../../components/CheckoutButtonCard'
 import { useState } from 'react'
 import CheckoutPaymentQR from './CheckoutPaymentQR'
 
-const CheckoutPaymentCard = () => {
+const CheckoutPaymentCard = ({onNext,updateData}) => {
 
   const [cardData, setCardData] = useState({
       firstName:'',
@@ -24,18 +24,20 @@ const CheckoutPaymentCard = () => {
 
     const handleSubmit = (e) => {
       e.preventDefault();
-  
+
       if (
         !cardData.firstName ||
         !cardData.lastName ||
         !cardData.cardNumber ||
         !cardData.expDate ||
-        !cardData.cvv ||
-        !cardData.saveDetail
+        !cardData.cvv
       ) {
         alert("Please fill out all required fields before continuing.");
         return;
       }
+
+      updateData(cardData);
+
       console.log("Submitting", cardData)
       setCardData({
         firstName:'',
@@ -43,17 +45,18 @@ const CheckoutPaymentCard = () => {
         cardNumber:'',
         expDate:'',
         cvv:'',
-        saveDetail:'',
+        saveDetail:false,
       })
+      onNext()
     }
   const [method, setMethod] = useState("card")
 
 
   return (
-    <main className="flex flex-row gap-[16px] mt-[48px] mx-[152px] mb-auto">
+    <main className="flex flex-row gap-[16px] mx-[152px] mb-auto">
           {/* <!-- Left Content --> */}
           <div className="flex flex-col w-[1072px] mx-auto mb-10">
-           <h1 className="mt-[40px] text-[2rem] font-semibold col-span-2">Payment methods</h1>
+           <h1 className="text-[2rem] font-semibold col-span-2">Payment methods</h1>
                 <div className="flex flex-row gap-[32px] mt-[16px] mb-6 ">
                   {/* Card logo */}
                     <button onClick={() => {setMethod("card")}} className="flex justify-center  w-[140px] h-[57px]border-zinc-400 hover:border-[2px] hover:border-[#334DD8] ">
@@ -133,7 +136,7 @@ const CheckoutPaymentCard = () => {
                             <p className="text-xl font-semibold">Save my payment details for future purchases</p>
                         </div>
                         <div className="w-full">
-                        <button onSubmit={handleSubmit} className='w-full'><CheckoutButton currentStep='payment' orderValue='1234'/></button>
+                        <button type='submit' className='w-full'><CheckoutButton currentStep='payment' orderValue='1234'/></button>
                             <p className="text-secondary-light-gray-500 mt-[12px] col-span-2 text-wrap">
                                 By continuing, I confirm that I have read and accept the&nbsp;
                                 <a href="#" className="underline">Terms and Conditions</a> and the&nbsp;

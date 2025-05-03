@@ -2,7 +2,7 @@ import React from 'react'
 import CheckoutButton from '../../components/CheckoutButtonCard'
 import { useState } from 'react'
 
-const CheckoutShipping = () => {
+const CheckoutShipping = ({onNext, updateData}) => {
 
   const [shippingData, setShippingData] = useState({
     firstName:'',
@@ -48,9 +48,12 @@ const CheckoutShipping = () => {
       return;
     }
 
+
     console.log("Submitting", shippingData)
+    updateData(shippingData)
+
     setShippingData({
-    firstName:'',
+    firstName:'abctest',
     lastName:'',
     street:'',
     specify:'',
@@ -60,18 +63,21 @@ const CheckoutShipping = () => {
     country:'',
     email:'',
     phone:'',
-    smsPromotion:'',
-    emailPromotion:'',
+    smsPromotion:false,
+    emailPromotion:false,
     shipping:'',
-    })
+    });
+
+    onNext();
   }
+
 
   return (
   <>
     <form onSubmit={handleSubmit} className="flex flex-col w-[1072px] mx-auto mb-10">
             {/* General information */}
         <div className='mb-[40px]'>
-            <h1 className="mt-[40px] text-[2rem] font-semibold col-span-2">Shipping Address</h1>
+            <h1 className="text-[2rem] font-semibold col-span-2">Shipping Address</h1>
             <div className="grid grid-cols-2 gap-[24px]">
                 <div className="col-span-1">
                   <p className="mt-[24px] font-semibold text-[1.25rem]">First name<span className="text-red-500">*</span></p>
@@ -172,7 +178,7 @@ const CheckoutShipping = () => {
                       name="smsPromotion"
                       checked={shippingData.smsPromotion}
                       onChange={handleOnchange}
-                      className="border-1 border-[#A1A1AA] w-[24px] h-[24px]"
+                      className="border-1 border-[#a1aaa2] w-[24px] h-[24px]"
                       />
               <p className="text-xl font-semibold">Please send me SMS shipping updates about my order</p>
             </div>
@@ -260,7 +266,9 @@ const CheckoutShipping = () => {
               </label>
             </div>
 
-            <button onClick={handleSubmit}><CheckoutButton currentStep='shipping'/></button>
+            <button type="submit">
+
+              <CheckoutButton currentStep='shipping'/></button>
               <p className="text-gray-500 mt-[12px]">
                 By continuing, I confirm that I have read and accept the&nbsp;
                 <a href="#" className="underline">Terms and Conditions</a> and the&nbsp;
