@@ -60,6 +60,7 @@ export default function Login() {
                         <img src={s} />
                     ))}
                 </Carousel>
+                <p>test</p>
             </div>
         </div>
     </div>
