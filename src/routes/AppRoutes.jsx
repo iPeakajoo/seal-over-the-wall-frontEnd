@@ -1,3 +1,4 @@
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "../pages/Home";
 import Shop from "../pages/Shop";
@@ -20,11 +21,33 @@ import CreateDesign from "../pages/CreateDesign";
 import CreateDesignLayout from "../layouts/CreateDesignLayout";
 import CollectDetails from "../pages/CollectDetails";
 
+import { createBrowserRouter, RouterProvider } from "react-router"
+import Home from "../pages/Home"
+import Shop from "../pages/Shop"
+import HowtoWork from "../pages/HowtoWork"
+import ExpressYourself from "../pages/ExpressYourself"
+import Cart from "../pages/Cart"
+import CheckOut from "../pages/checkout/Checkout"
+import Login from "../pages/auth/Login"
+import Register from "../pages/auth/Register"
+import Layout from "../layouts/Layout"
+import LayoutAdmin from "../layouts/LayoutAdmin"
+import Dashboard from "../pages/admin/Dashboard"
+import Category from "../pages/admin/Category"
+import Product from "../pages/admin/Product"
+import Manage from "../pages/admin/Manage"
+import HomeUser from "../pages/user/HomeUser"
+import ProductDetail from "../pages/ProductDetail"
+import Signup from "../pages/Signup"
+
+
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
+
       { index: true, element: <Home /> },
       { path: "shop", element: <Shop /> },
       { path: "product-detail", element: <ProductDetail /> },
@@ -35,6 +58,20 @@ const router = createBrowserRouter([
       { path: "register", element: <Register /> },
       { path: "checkout", element: <CheckOut /> },
       { path: "signup", element: <Signup /> },
+
+      {index: true, element: <Home />},
+      {path: "shop", element: <Shop />},
+      {path: "product-detail", element: <ProductDetail />},
+      {path: "how-to-work", element: <HowtoWork />},
+      {path: "express-yourself", element: <ExpressYourself />},
+      {path: "cart", element: <Cart />},
+      {path: "login", element: <Login />},
+      {path: "register", element: <Register />},
+      {path: "checkout", element: <CheckOut/>},
+      {path: "signup", element: <Signup />},
+
+
+
     ]
   },
   {

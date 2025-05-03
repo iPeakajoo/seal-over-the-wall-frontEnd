@@ -2,29 +2,39 @@ import React from 'react'
 import CheckoutAddress from '../../components/CheckoutAddressCard'
 import CheckoutShipping from '../../components/CheckoutShippingCard'
 import CheckoutCard from '../../components/CheckoutCardCard'
+import CheckoutButton from '../../components/CheckoutButtonCard'
 
 
 
-const CheckoutSummary = () => {
+
+const CheckoutSummary = ({onNext, onEdit, checkoutData}) => {
+
+
+
   return (
-    <>
+    
     <div id ="summary" className="flex flex-col w-[1072px] gap-2 items-center mx-auto">
 
+
             <div id ="shippingInformation" className="flex justify-between border-[1.25px] p-6 w-full h-auto items-center border-secondary-light-gray-500">
-              <CheckoutAddress name='Somchai Kitkardee' address='62/1 Soi Ekkachai 116, Bang Bon Nuea, Bang Bon, 10150, Bangkok, Thailand' tel='080-236-6966'/>
-              <button className="text-lg font-[500] items-center hover:cursor-pointer hover:scale-100 duration-300 p-4">Edit</button>
+              <CheckoutAddress name={`${checkoutData.shippingInfo.firstName} ${checkoutData.shippingInfo.lastName}`} address={`${checkoutData.shippingInfo.street}, ${checkoutData.shippingInfo.specify}, ${checkoutData.shippingInfo.city}, ${checkoutData.shippingInfo.postal}, ${checkoutData.shippingInfo.state}, ${checkoutData.shippingInfo.country}`} tel={checkoutData.shippingInfo.phone}/>
+              <button onClick={onEdit} className="text-lg font-[500] items-center hover:cursor-pointer hover:scale-100 duration-300 p-4">Edit</button>
             </div>
 
             <div id ="shippingInformation" className="flex justify-between border-[1.25px] p-6 w-full h-auto items-center border-secondary-light-gray-500">
-              <CheckoutShipping method = "Fastest Delivery" methodPrice = {150} date ="March 15 2025" />
+              <CheckoutShipping method={checkoutData.shippingInfo.shipping === "fastest" ? "Fastest Delivery" : checkoutData.shippingInfo.shipping === "standard" ? "Standard Delivery" : "Cash on Delivery (COD)"}
+               methodPrice={checkoutData.shippingInfo.shipping === "fastest" ? 120 : checkoutData.shippingInfo.shipping === "standard" ? 60 : 120}
+                date ="March 15 2025" />
             </div>
 
-            <div id ="paymentMethod" className=" border-[1.25px] border-secondary-light-gray-500 p-6 w-full h-auto">
-              <CheckoutCard cardNumber='1234 5678 9101 1112' expire="02/27"/>
+            <div id ="paymentMethod" className=" border-[1.25px] border-secondary-light-gray-500 p-6 w-full h-auto mb-14 ">
+              <CheckoutCard cardNumber={`${checkoutData.paymentInfo.cardNumber}`} expire={`${checkoutData.paymentInfo.expDate}`}/>
             </div>
-            <button className="mt-14 bg-[#202020] w-full h-auto flex py-2 px-3 justify-center hover:scale-102 duration-300 text-[#FFFFFF] font-semibold text-2xl hover:cursor-pointer">
-              Confirm your order
-          </button>
+
+            <button onClick={onNext} className='w-full'>
+              <CheckoutButton currentStep='summary'/>
+            </button>
+
           <div className='items-start flex w-full'>
           <p className="text-gray-500 mt-[12px] col-span-2 text-wrap inline-flex">
             By continuing, I confirm that I have read and accept the&nbsp;
@@ -32,7 +42,7 @@ const CheckoutSummary = () => {
             <a href="#" className="underline inline-flex">Privacy Policy</a>.</p>
           </div>
           </div>
-    </>
+    
   )
 }
 
