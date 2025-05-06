@@ -1,12 +1,12 @@
 import React from 'react';
 import Carousel from '../components/Carousel';
 
-import fetchthis from "../assets/images/Products/t-shirt/fetch-this/fetch-front-black.png";
-import thinkoutside from "../assets/images/Products/bags/think-out-side/think-out-side-blue.png";
-import cupcustommike from "../assets/images/Products/cup/custom-mike/custom-mike-gray.png";
+import shirt from "../assets/images/login-shirt.svg";
+import bag from "../assets/images/login-bag.svg";
+import cup from "../assets/images/login-cup.svg";
 
 const slides = [
-    fetchthis,thinkoutside,cupcustommike
+    shirt,bag,cup
 ]
 
 export default function Login() {
@@ -60,7 +60,6 @@ export default function Login() {
                         <img src={s} />
                     ))}
                 </Carousel>
-                <p>test</p>
             </div>
         </div>
     </div>
