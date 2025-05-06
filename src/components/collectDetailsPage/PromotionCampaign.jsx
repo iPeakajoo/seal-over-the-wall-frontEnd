@@ -7,7 +7,7 @@ import shortline from "../../assets/images/collect-details-pages/short-line.svg"
 function PromotionCampaign() {
   return (
     <div>
-      <div className='flex justify-center items-center w-[356px] h-[48px] bg-primary-black rounded-full ml-120'>
+      <div className='flex justify-center items-center w-[340px] h-[48px] bg-primary-black rounded-full ml-130'>
           <img src={spark} alt="Spark Icon" className='mr-1'/>
           <h2 className='text-white text-2xl font-semibold flex justify-center items-center h-full'>
             Promotion & Campaign
@@ -19,11 +19,11 @@ function PromotionCampaign() {
         </h2>
         <img src={logo} alt="Logo" />
       </div>
-        <p className='w-[1344px] text-center mt-4'>Elevate your products and reach more customers! Join our promotion network and gain premium visibility in our shop, special collections,
+        <p className='w-[1344px] text-center mt-6'>Elevate your products and reach more customers! Join our promotion network and gain premium visibility in our shop, special collections,
           <br/>social media, and advertising campaigns.
         </p>
         <div className='flex justify-center items-baseline mt-10 mb-10'>
-          <span className='font-bold text-5xl mr-2'>
+          <span className='font-bold text-5xl'>
             Why
           </span>
           <span className='text-2xl font-bold'>

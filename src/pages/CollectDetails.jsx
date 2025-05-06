@@ -10,9 +10,11 @@ import PromotionCampaign from "../components/collectDetailsPage/PromotionCampaig
 const CreateDesignLayout = () => {
   return (
     <div className="w-full flex flex-col items-center">
-       
+
+
+
         {/* Placeholder for the stepper */}
-        <div className="w-full font-semibold flex justify-center items-center h-16 bg-gray-200 mb-7">
+        <div className="w-full font-semibold flex justify-center items-center h-16 bg-gray-200 mb-7 text-xl">
             Stepper Placeholder
         </div>
             <div className="w-full mb-10 pl-[288px]">
@@ -25,13 +27,13 @@ const CreateDesignLayout = () => {
                 <button>
                 <BackButton />
                 </button>
-                
-                <button>
+
+                <button >
                 <NextStepButton />
                 </button>
                 </div>
         </div>
-        <dev className="flex justify-center gap-10 mx-[152px] mt-3.5 p-1.5">
+        <dev className="flex justify-center gap-15 mx-[152px] mt-3.5 p-1.5">
             <PriceAndStockTable />
             <TotalProfitTable />
         </dev>

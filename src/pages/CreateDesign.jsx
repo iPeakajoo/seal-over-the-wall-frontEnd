@@ -12,11 +12,12 @@ import SaveButton from '../components/createDesignPage/SaveButton';
 
 
 
+
 function CreateDesign() {
 
   return (
     <>
-    <div className="font-semibold flex justify-center items-center h-16 bg-gray-200 mb-7">
+    <div className="font-semibold text--fs-xl flex justify-center items-center h-16 bg-gray-200 mb-7">
         Stepper Placeholder
     </div>
 
