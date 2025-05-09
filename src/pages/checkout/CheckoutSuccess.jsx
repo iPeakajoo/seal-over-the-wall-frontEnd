@@ -7,11 +7,11 @@ import SaleSlide from '../../components/HomePage/SaleSlide'
 
 
 
-const Success = ({orderId}) => {
+const Success = ({orderId, onReset}) => {
     const items = ProductDataStore((state) => state.orders)
         return (
-            <>
-            <div className='flex flex-col content-center w-full mx-[152px]'>
+            <div className='w-auto flex flex-col items-center'>
+            <div className='flex flex-col w-[1616px] content-center'>
                             <article className='w-full'>
                             <div className="space-y-4">
                                 <h2 className="text-left text-[32px] font-semibold border-b-1 border-[#A1A1AA] pb-2">Your Oder</h2>
@@ -75,17 +75,19 @@ const Success = ({orderId}) => {
                         {/* Summary detail */}
 
                         <div className='w-full'>
-                            <TotalCard  subTotal="1696" 
+                            <button className='w-full' onClick={onReset}>
+                                <TotalCard  subTotal="1696" 
                                         shippingCost={items.shippingDetail.shippingMethod.cost} 
                                         orderValue='1816' 
                                         currentStep='successful'/>
+                            </button>
                         </div>
 
                     </div>
                 </section>
                 </div>
                 <SaleSlide/>
-    </>
+    </div>
   )
 }
 

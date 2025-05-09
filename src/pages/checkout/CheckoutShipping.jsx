@@ -53,7 +53,7 @@ const CheckoutShipping = ({onNext, updateData}) => {
     updateData(shippingData)
 
     setShippingData({
-    firstName:'',
+    firstName:'abctest',
     lastName:'',
     street:'',
     specify:'',
@@ -77,7 +77,7 @@ const CheckoutShipping = ({onNext, updateData}) => {
     <form onSubmit={handleSubmit} className="flex flex-col w-[1072px] mx-auto mb-10">
             {/* General information */}
         <div className='mb-[40px]'>
-            <h1 className="mt-[40px] text-[2rem] font-semibold col-span-2">Shipping Address</h1>
+            <h1 className="text-[2rem] font-semibold col-span-2">Shipping Address</h1>
             <div className="grid grid-cols-2 gap-[24px]">
                 <div className="col-span-1">
                   <p className="mt-[24px] font-semibold text-[1.25rem]">First name<span className="text-red-500">*</span></p>

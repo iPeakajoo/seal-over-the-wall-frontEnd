@@ -36,6 +36,50 @@ const CustomConnector = styled(StepConnector)(({ theme }) => ({
   },
 }));
 
+const CustomStepIconRoot = styled('div')(({ theme, ownerState }) => ({
+  backgroundColor: ownerState.active || ownerState.completed ? '#334DD8' : '#B3BDF1',
+  zIndex: 1,
+  color: '#fff',
+  width: 44,
+  height: 44,
+  display: 'flex',
+  borderRadius: '50%',
+  justifyContent: 'center',
+  alignItems: 'center',
+  fontSize: 24,
+  fontWeight: 'bold',
+}));
+
+function CustomStepIcon(props) {
+  const { active, completed, className } = props;
+
+  return (
+    <CustomStepIconRoot ownerState={{ active, completed }} className={className}>
+      {completed ? '✓' : active ? <div style={{width: 16,height: 16,backgroundColor: '#fff', borderRadius: '50%',}}/> : props.icon}
+    </CustomStepIconRoot>
+  );
+}
+
+const CustomStepLabel = ({ children, activeStep, index }) => {
+  const isActive = index === activeStep;
+  const isCompleted = index < activeStep;
+
+  return (
+    <StepLabel
+      StepIconComponent={CustomStepIcon}
+      sx={{
+        '.MuiStepLabel-label': {
+          fontSize: '24px',
+          fontWeight: 600,
+          color: isActive || isCompleted ? '#202020' : '#BDBDBD',
+          fontFamily: '"Geist", "Roboto", "Helvetica", "Arial", sans-serif',
+        },
+      }}
+    >
+      {children}
+    </StepLabel>
+  );
+};
 
 const steps = ['Shipping', 'Payment', 'Summary'];
 
@@ -43,7 +87,7 @@ const steps = ['Shipping', 'Payment', 'Summary'];
 //Stepper component
 export default function CheckoutStepper({step}) {
 
-  // const [activeStep, setActiveStep] = React.useState(step);
+
   // const [skipped, setSkipped] = React.useState(new Set());
 
   // const isStepOptional = (step) => {
@@ -88,14 +132,17 @@ export default function CheckoutStepper({step}) {
   // };
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Stepper activeStep={step} alternativeLabel connector={<CustomConnector />}>
-        {steps.map((label) => (
-          <Step key={label}>
-            <StepLabel>{label}</StepLabel>
+    <Box sx={{ width: "1072px" }}>
+      <Stepper activeStep={step} alternativeLabel={false} connector={<CustomConnector />}>
+        {steps.map((label,index) => (
+          <Step key={label} >
+            <CustomStepLabel activeStep={step} index={index}>
+            {label}
+            </CustomStepLabel>
           </Step>
         ))}
       </Stepper>
+      <hr className='border-secondary-dark-gray-300 h-[1px] mt-6 mb-14'/>
     </Box>
   );
 }
