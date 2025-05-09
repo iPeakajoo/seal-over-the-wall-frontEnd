@@ -1,6 +1,9 @@
 import React from 'react';
+import { PRINT_AREA_MAP } from '../../constants/printAreasMap';
 
-function Printareas({ printareas = [], selected, setSelected }) {
+function ProductPrintAreaSelector({ productType, selected, setSelected }) {
+  const printareas = PRINT_AREA_MAP[productType] || [];
+
   const togglePrintArea = (name) => {
     setSelected((prev) =>
       prev.includes(name)
@@ -8,6 +11,8 @@ function Printareas({ printareas = [], selected, setSelected }) {
         : [...prev, name]
     );
   };
+
+  if (!printareas.length) return null;
 
   return (
     <div>
@@ -29,7 +34,7 @@ function Printareas({ printareas = [], selected, setSelected }) {
               absolute bottom-0 left-0 h-1 w-full rounded-sm
               bg-primary-blue-500 transition-transform duration-300
               ${selected.includes(printarea.name) ? 'scale-x-100' : 'scale-x-0'}
-              transform origin-left
+              transform origin-end
             `} />
           </button>
         ))}
@@ -38,4 +43,4 @@ function Printareas({ printareas = [], selected, setSelected }) {
   );
 }
 
-export default Printareas;
+export default ProductPrintAreaSelector;

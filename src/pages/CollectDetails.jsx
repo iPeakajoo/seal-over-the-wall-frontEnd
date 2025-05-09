@@ -14,7 +14,7 @@ const CreateDesignLayout = () => {
 
 
         {/* Placeholder for the stepper */}
-        <div className="w-full font-semibold flex justify-center items-center h-16 bg-gray-200 mb-7 text-xl">
+        <div className="w-full font-semibold flex justify-center items-center h-16 bg-gray-200 mb-7 text-xl mt-40 ">
             Stepper Placeholder
         </div>
             <div className="w-full mb-10 pl-[288px]">

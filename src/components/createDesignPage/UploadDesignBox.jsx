@@ -3,7 +3,7 @@ import fileicon from "../../assets/images/create-design-pages/file-icon.svg";
 
 function UploadDesignBox() {
   return (
-    <div className='step-2 flex flex-col items-center justify-center w-[296px] h-[340px] outline-3 outline-dashed outline-gray-200'>
+    <div className='step-2 flex flex-col items-center justify-center w-[290px] h-[340px] outline-3 outline-dashed outline-gray-200 mt-2'>
       <p className='font-semibold text-2xl'>Upload you design</p>
       <p className='font-medium text-lg'>Drag & Drop it here</p>
       <img src={fileicon} alt="File Icon" className='w-[56px] h-[72px] my-10' />
