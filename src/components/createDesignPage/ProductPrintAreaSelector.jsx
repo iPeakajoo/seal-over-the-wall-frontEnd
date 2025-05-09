@@ -28,7 +28,7 @@ function ProductPrintAreaSelector({ productType, selected, setSelected }) {
             <img
               src={printarea.icon}
               alt={`${printarea.label || printarea.name} preview`}
-              className="w-[80px] h-auto"
+              className="w-[80px] h-[72px]"
             />
             <div className={`
               absolute bottom-0 left-0 h-1 w-full rounded-sm
