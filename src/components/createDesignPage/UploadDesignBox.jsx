@@ -70,21 +70,19 @@ function UploadDesignBox({ onUpload }) {
   return (
     <>
       {uploadURL ? (
-        <div className='flex flex-col items-center justify-center mt-4'>
-          <img
-            src={uploadURL}
-            alt='Uploaded Design Preview'
-            className='w-[290px] max-h-[300px] object-contain'
+        <div className='relative w-[290px] h-[250px] flex items-center justify-center mt-10'>
+        <img
+          src={uploadURL}
+          alt='Uploaded Design Preview'
+          className='max-h-full max-w-full object-contain'
           />
-          <div className='flex gap-4 mt-20'>
-            <button
-              onClick={handleRemove}
-              className='w-[150px] bg-primary-black text-white font-medium py-2 px-4 rounded-[8px] items-center justify-center cursor-pointer'
-            >
-              Remove
-            </button>
-          </div>
-        </div>
+        <button
+        onClick={handleRemove}
+        className='absolute mt-130 left-1/2 -translate-x-1/2 bg-red-500 text-white font-medium py-2 px-4 rounded-[8px] cursor-pointer'
+          >
+        Remove
+      </button>
+      </div>
       ) : (
         <div
           className='step-2 flex flex-col items-center justify-center w-[290px] h-[330px] outline-3 outline-dashed outline-gray-200 mt-2 cursor-pointer relative'
@@ -127,3 +125,4 @@ function UploadDesignBox({ onUpload }) {
 }
 
 export default UploadDesignBox;
+
