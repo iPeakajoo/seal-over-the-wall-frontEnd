@@ -1,8 +1,8 @@
 import React from 'react'
-import shirtblack from "../../assets/images/Products/t-shirt/prove-them/prove-them-front-black.png";
-import shirtwhite from "../../assets/images/Products/t-shirt/prove-them/prove-them-front-white.png";
-import shirtblue from "../../assets/images/Products/t-shirt/prove-them/prove-them-front-blue.png";
-import shirtgray from "../../assets/images/Products/t-shirt/prove-them/prove-them-front-gray.png";
+import shirtblack from "../../assets/images/Products/shirt/prove/prove-shirt-black-front.png";
+import shirtwhite from "../../assets/images/Products/shirt/prove/prove-shirt-white-front.png";
+import shirtblue from "../../assets/images/Products/shirt/prove/prove-shirt-blue-front.png";
+import shirtgray from "../../assets/images/Products/shirt/prove/prove-shirt-gray-front.png";
 
 function SelectedProduct() {
   return (
