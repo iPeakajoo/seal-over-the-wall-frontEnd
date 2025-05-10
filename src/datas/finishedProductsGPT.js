@@ -257,6 +257,7 @@ export const products = [
           image: [
             "src/assets/images/Products/t-shirt/fetch/fetch-shirt-black-front.png",
             "src/assets/images/Products/t-shirt/fetch/fetch-shirt-black-back.png",
+            
           ],
         },
         {

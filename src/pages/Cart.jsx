@@ -4,7 +4,7 @@ import GiftCard from '../components/GiftCard';
 import Questions from '../components/Questions';
 import AdBox from '../components/AdBox';
 import { useEffect, useState } from 'react';
-import { getCart, updateCart } from '../services/cart.js';
+import { getCart } from '../services/cart.js';
 
 const Cart = () => {
   const [orderItem, setOrderItem] = useState([]);
@@ -12,7 +12,7 @@ const Cart = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const userId = '681c487c82dfd3ede10727e3';
+  const userId = '681f06a48872b623329fd31b';
 
   // useEffect(() => {
   //   setOrderItem([
@@ -84,10 +84,12 @@ const Cart = () => {
         console.log('Full Response:', response);
         const cartData = response.data.cart;
 
+        console.log(cartData.items.productId?.images);
+
         setOrderItem(
           cartData.items.map((item) => ({
-            imageArray: [item.productId?.images || []], // For initial display
-            productImages: item.selectedImages [], // Entire images array from Product
+            imageArray: item.productId?.images || [], // For initial display
+            productImages: item.selectedImages, // Entire images array from Product
             name: item.productId?.title || '',
             size: item.selectedSize,
             color: item.selectedColor,
@@ -106,7 +108,7 @@ const Cart = () => {
     };
 
     fetchCartData();
-  }, [userId]);
+  }, []);
 
   if (loading) {
     return <div>Loading cart...</div>;
@@ -122,10 +124,10 @@ const Cart = () => {
       <div className="flex justify-center  items-center w-full pl-[88px]">
         <div className="w-[1072px] flex justify-between mt-[50px] pb-[25px] border-b-2 border-secondary-light-gray-300"></div>
       </div>
-      {orderItem.map((item, index) => (
+      {orderItem.map((item) => (
         <CartBox
           key={item.cartItemId} // Use a unique ID from your cart item
-          imageArray={item.image}
+          imageArray={item.imageArray}
           name={item.name}
           size={item.size}
           color={item.color}
