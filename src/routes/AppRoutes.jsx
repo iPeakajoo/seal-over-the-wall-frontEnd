@@ -21,7 +21,6 @@ import Create from "../pages/Create";
 import CreateDesignLayout from "../layouts/CreateDesignLayout";
 import CollectDetails from "../pages/CollectDetails";
 
-
 const router = createBrowserRouter([
   {
     path: '/',
