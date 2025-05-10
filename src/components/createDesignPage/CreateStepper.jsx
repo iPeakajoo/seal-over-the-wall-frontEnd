@@ -91,7 +91,7 @@ export default function CreateStepper({step}) {
           </Step>
         ))}
       </Stepper>
-      <hr className='border-secondary-dark-gray-300 h-[1px] mt-6 mb-14'/>
+      <hr className='border-white h-[1px] mt-6 mb-14'/>
     </Box>
   );
 }
