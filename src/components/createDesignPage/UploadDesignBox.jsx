@@ -39,6 +39,7 @@ function UploadDesignBox({ onUpload }) {
       } else {
         setError('Upload failed. Try again.');
       }
+    // eslint-disable-next-line no-unused-vars
     } catch (err) {
       setError('Upload error. Check connection.');
     } finally {
