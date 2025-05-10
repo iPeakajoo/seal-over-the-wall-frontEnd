@@ -7,16 +7,10 @@ import TotalProfitTable from "../components/collectDetailsPage/TotalProfitTable"
 import PromotionCampaign from "../components/collectDetailsPage/PromotionCampaign";
 
 
-const CreateDesignLayout = () => {
+
+const CollectDetails = ({ onNext, onBack }) => {
   return (
     <div className="w-full flex flex-col items-center">
-
-
-
-        {/* Placeholder for the stepper */}
-        <div className="w-full font-semibold flex justify-center items-center h-16 bg-gray-200 mb-7 text-xl mt-40 ">
-            Stepper Placeholder
-        </div>
             <div className="w-full mb-10 pl-[288px]">
                 <h1 className="text-4xl font-bold">Collect Details</h1>
                 <p className="text-lg mt-4 mb-6">
@@ -25,18 +19,18 @@ const CreateDesignLayout = () => {
                  </p>
                 <div className="flex justify-end items-center gap-4 pr-[152px] mt-1.5 ">
                 <button>
-                <BackButton />
+                <BackButton onBack={onBack} />
                 </button>
 
                 <button >
-                <NextStepButton />
+                <NextStepButton onNext={onNext} />
                 </button>
                 </div>
         </div>
-        <dev className="flex justify-center gap-15 mx-[152px] mt-3.5 p-1.5">
+        <div className="flex justify-center gap-15 mx-[152px] mt-3.5 p-1.5">
             <PriceAndStockTable />
             <TotalProfitTable />
-        </dev>
+        </div>
         <div className="w-full flex justify-center items-center mt-10 mb-10">
           <PromotionCampaign />
         </div>
@@ -45,4 +39,4 @@ const CreateDesignLayout = () => {
   );
 };
 
-export default CreateDesignLayout;
+export default CollectDetails;

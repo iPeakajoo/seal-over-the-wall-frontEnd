@@ -17,7 +17,7 @@ import Manage from "../pages/admin/Manage";
 import HomeUser from "../pages/user/HomeUser";
 import ProductDetail from "../pages/ProductDetail";
 import Signup from "../pages/Signup";
-import CreateDesign from "../pages/CreateDesign";
+import Create from "../pages/Create";
 import CreateDesignLayout from "../layouts/CreateDesignLayout";
 import CollectDetails from "../pages/CollectDetails";
 
@@ -56,10 +56,10 @@ const router = createBrowserRouter([
     children: [{ index: true, element: <HomeUser /> }]
   },
   {
-    path: '/createdesign',
+    path: '/create',
     element: <CreateDesignLayout />,
     children: [
-      { index: true, element: <CreateDesign /> },
+      { index: true, element: <Create /> },
       { path: "collectdetails", element: <CollectDetails /> },
     ]
   },
