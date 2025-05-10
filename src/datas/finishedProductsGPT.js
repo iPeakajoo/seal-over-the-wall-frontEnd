@@ -163,8 +163,7 @@ export const products = [
       ],
     },
 
-    {
-      productId: 5,
+    {productId: 5,
       productType: "bag",
       styleName: "dont",
       title: "Don't Kill My Vibe Bag",
