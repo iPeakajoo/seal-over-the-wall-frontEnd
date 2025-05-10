@@ -71,7 +71,7 @@ function UploadDesignBox({ onUpload }) {
   return (
     <>
       {uploadURL ? (
-        <div className='relative w-[290px] h-[250px] flex items-center justify-center mt-10'>
+        <div className='relative w-[290px] h-[250px] flex items-center justify-center  mt-10'>
         <img
           src={uploadURL}
           alt='Uploaded Design Preview'
