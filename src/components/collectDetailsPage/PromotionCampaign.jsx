@@ -7,7 +7,7 @@ import shortline from "../../assets/images/collect-details-pages/short-line.svg"
 function PromotionCampaign() {
   return (
     <div>
-      <div className='flex justify-center items-center w-[340px] h-[48px] bg-primary-black rounded-full ml-130'>
+      <div className='flex justify-center items-center w-[340px] h-[48px] bg-primary-black rounded-full ml-125'>
           <img src={spark} alt="Spark Icon" className='mr-1'/>
           <h2 className='text-white text-2xl font-semibold flex justify-center items-center h-full'>
             Promotion & Campaign
