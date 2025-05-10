@@ -63,7 +63,7 @@ function CreateDesign({ onNext, updateCreateData }) {
         </div>
 
         <div className="absolute w-[1615px] flex justify-center items-center">
-          <div className="w-full flex justify-between items-start pr-[143px]">
+          <div className="w-full flex justify-between items-start pr-[127px]">
             <ColorSelection
               productType={selectedProduct}
               selectedColor={selectedColor}
