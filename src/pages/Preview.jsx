@@ -8,7 +8,7 @@ import gif from "../assets/images/gif/custommike-motion.gif"
 
 const Preview = ({ onNext, onBack }) => {
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="flex flex-col items-center">
             <div className="w-full mb-10 pl-[288px]">
                 <h1 className="text-4xl font-bold">Preview</h1>
                 <p className="text-lg mt-4 mb-6">

@@ -10,7 +10,8 @@ import PromotionCampaign from "../components/collectDetailsPage/PromotionCampaig
 
 const CollectDetails = ({ onNext, onBack }) => {
   return (
-    <div className="w-full flex flex-col items-center">
+  <form>
+    <div className="flex flex-col items-center">
             <div className="w-full mb-10 pl-[288px]">
                 <h1 className="text-4xl font-bold">Collect Details</h1>
                 <p className="text-lg mt-4 mb-6">
@@ -36,6 +37,7 @@ const CollectDetails = ({ onNext, onBack }) => {
         </div>
       <Outlet />
     </div>
+  </form>
   );
 };
 

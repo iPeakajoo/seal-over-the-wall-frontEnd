@@ -8,7 +8,7 @@ import gif from "../assets/images/gif/custommike-motion.gif"
 
 const ExpressAndPublish = ({ onNext, onBack }) => {
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className=" flex flex-col items-center">
             <div className="w-full mb-10 pl-[288px]">
                 <h1 className="text-4xl font-bold">Express & Publish</h1>
                 <p className="text-lg mt-4 mb-13">
