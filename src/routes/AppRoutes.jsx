@@ -19,6 +19,7 @@ import Signup from '../pages/Signup';
 import CreateDesign from '../pages/CreateDesign';
 import CreateDesignLayout from '../layouts/CreateDesignLayout';
 import CollectDetails from '../pages/CollectDetails';
+import { AuthProvider } from '../context/AuthContext';
 
 const router = createBrowserRouter([
   {
