@@ -35,3 +35,5 @@ function SelectedProduct({ uploadedImage }) {
 }
 
 export default SelectedProduct;
+
+export default SelectedProduct;

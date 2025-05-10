@@ -61,7 +61,7 @@ function CreateDesign() {
         <SelectedProduct />
       </div>
 
-      <Walkthrough />
+    <Walkthrough />
     </>
   );
 }

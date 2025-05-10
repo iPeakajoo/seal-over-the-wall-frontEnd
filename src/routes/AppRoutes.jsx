@@ -1,3 +1,4 @@
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "../pages/Home";
 import Shop from "../pages/Shop";
@@ -20,42 +21,42 @@ import CreateDesign from "../pages/CreateDesign";
 import CreateDesignLayout from "../layouts/CreateDesignLayout";
 import CollectDetails from "../pages/CollectDetails";
 
+
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Layout />,
     children: [
       { index: true, element: <Home /> },
-      { path: "shop", element: <Shop /> },
-      { path: "product-detail", element: <ProductDetail /> },
-      { path: "how-to-work", element: <HowtoWork /> },
-      { path: "express-yourself", element: <ExpressYourself /> },
-      { path: "cart", element: <Cart /> },
-      { path: "login", element: <Login /> },
-      { path: "register", element: <Register /> },
-      { path: "checkout", element: <CheckOut /> },
-      { path: "signup", element: <Signup /> },
+      { path: 'shop', element: <Shop /> },
+      { path: 'product-detail', element: <ProductDetail /> },
+      { path: 'how-to-work', element: <HowtoWork /> },
+      { path: 'express-yourself', element: <ExpressYourself /> },
+      { path: 'cart', element: <Cart /> },
+      { path: 'login', element: <Login /> },
+      { path: 'register', element: <Register /> },
+      { path: 'checkout', element: <CheckOut /> },
+      { path: 'signup', element: <Signup /> }
+
     ]
   },
   {
-    path: "/admin",
+    path: '/admin',
     element: <LayoutAdmin />,
     children: [
       { index: true, element: <Dashboard /> },
-      { path: "category", element: <Category /> },
-      { path: "product", element: <Product /> },
-      { path: "manage", element: <Manage /> },
+      { path: 'category', element: <Category /> },
+      { path: 'product', element: <Product /> },
+      { path: 'manage', element: <Manage /> }
     ]
   },
   {
-    path: "/user",
+    path: '/user',
     element: <LayoutAdmin />,
-    children: [
-      { index: true, element: <HomeUser /> },
-    ]
+    children: [{ index: true, element: <HomeUser /> }]
   },
   {
-    path: "/createdesign",
+    path: '/createdesign',
     element: <CreateDesignLayout />,
     children: [
       { index: true, element: <CreateDesign /> },
@@ -65,9 +66,7 @@ const router = createBrowserRouter([
 ]);
 
 const AppRoutes = () => {
-  return (
-    <RouterProvider router={router} />
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default AppRoutes;
