@@ -1,3 +1,4 @@
+
 import { createBrowserRouter, RouterProvider } from 'react-router';
 import Home from '../pages/Home';
 import Shop from '../pages/Shop';
@@ -17,6 +18,10 @@ import HomeUser from '../pages/user/HomeUser';
 import ProductDetail from '../pages/ProductDetail';
 import Signup from '../pages/Signup';
 import ExpressPublishPage from '../pages/expressAndPubish';
+import Create from "../pages/Create";
+import CreateDesignLayout from "../layouts/CreateDesignLayout";
+import CollectDetails from "../pages/CollectDetails";
+
 
 const router = createBrowserRouter([
   {
@@ -32,8 +37,10 @@ const router = createBrowserRouter([
       { path: 'login', element: <Login /> },
       { path: 'register', element: <Register /> },
       { path: 'checkout', element: <CheckOut /> },
+
       { path: 'signup', element: <Signup /> },
       { path: 'expressAndPubish', element: <ExpressPublishPage /> }
+
     ]
   },
   {
@@ -52,13 +59,13 @@ const router = createBrowserRouter([
     children: [{ index: true, element: <HomeUser /> }]
   },
   {
-    path: '/createdesign',
+    path: '/create',
     element: <CreateDesignLayout />,
     children: [
-      { index: true, element: <CreateDesign /> },
-      { path: 'collectdetails', element: <CollectDetails /> }
+      { index: true, element: <Create /> },
+      { path: "collectdetails", element: <CollectDetails /> },
     ]
-  }
+  },
 ]);
 
 const AppRoutes = () => {
