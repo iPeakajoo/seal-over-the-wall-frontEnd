@@ -9,7 +9,10 @@ import SelectedProduct from '../components/createDesignPage/SelectedProduct';
 import Walkthrough from '../components/createDesignPage/Walkthrough';
 import NextStepButton from '../components/createDesignPage/NextStepButton';
 import SaveButton from '../components/createDesignPage/SaveButton';
-import axios from 'axios';
+import { createdProduct } from "../services/created";
+
+
+
 
 function CreateDesign({ onNext, updateCreateData }) {
   const [selectedProduct, setSelectedProduct] = useState('tshirt');
@@ -17,24 +20,31 @@ function CreateDesign({ onNext, updateCreateData }) {
   const [selectedColors, setSelectedColors] = useState(['white']); // optional
 
   const handleSave = async () => {
-    try {
-      const payload = {
-        userId: 'USER_ID_HERE', //
-        imageUrl: designURL,
-        productType: selectedProduct,
-        color: selectedColor,
-      };
+  if (!designURL || selectedColors.length === 0 || !selectedProduct) {
+    alert("Please complete all required fields.");
+    return;
+  }
 
-      const response = await axios.post('http://localhost:6000/api/design', payload, {
-        withCredentials: true,
-      });
+  try {
+    const payload = {
+      productType: selectedProduct,
+      selectedColors,
+      designUrl: designURL,
+      title: "", //
+      description: "",
+      price: 0,
+      isPublished: false,
+    };
 
-      alert('Design saved!');
-    } catch (error) {
-      console.error('Error saving design:', error);
-      alert('Failed to save design.');
-    }
-  };
+    const result = await createdProduct(payload);
+    alert("Design saved!");
+    console.log("Saved design:", result);
+
+  } catch (error) {
+    console.error("Save failed:", error);
+    alert("Failed to save design.");
+  }
+};
 
   const renderProductTemplate = () => {
     switch (selectedProduct) {

@@ -39,8 +39,8 @@ const productMockups = {
 
 const printAreas = {
   tshirt: { top: '32%', left: '20%', width: '60%', height: '40%' },
-  bags: { top: '50%', left: '23%', width: '50%', height: '30%' },
-  cups: { top: '40%', left: '30%', width: '40%', height: '30%', transform: 'rotate(-25deg)' },
+  bags: { top: '50%', left: '26%', width: '43%', height: '30%' },
+  cups: { top: '40%', left: '29%', width: '40%', height: '30%', transform: 'rotate(-20deg)' },
 };
 
 function SelectedProduct({ selectedProduct, selectedColors, uploadedImage }) {
@@ -66,7 +66,10 @@ function SelectedProduct({ selectedProduct, selectedColors, uploadedImage }) {
               className='absolute object-contain pointer-events-none'
               style={{
               zIndex: 5,
-               ...printAreas[selectedProduct] // <- apply positioning and size
+              opacity: 0.85,
+              filter: 'contrast(1.2) brightness(0.95)',
+              mixBlendMode: 'mutiply',
+               ...printAreas[selectedProduct] // 
               }}
               />
               )}
