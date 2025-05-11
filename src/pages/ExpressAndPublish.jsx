@@ -15,7 +15,7 @@ const ExpressAndPublish = ({ onNext, onBack }) => {
                     Ready to showcase your creation? Fill in your product details and click to present your work to buyers!
                     <br />
                  </p>
-                <div className="flex justify-end items-center gap-4 pr-[152px] mt-1.5 ">
+                <div className="flex justify-end items-center gap-4 pr-[136px] mt-1.5 ">
                 <button>
                 <BackButton onBack={onBack} />
                 </button>

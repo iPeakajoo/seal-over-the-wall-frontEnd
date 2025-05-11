@@ -14,7 +14,7 @@ const Preview = ({ onNext, onBack }) => {
                 <p className="text-lg mt-4 mb-6">
                     Preview your design before publishing.<br/>This page will display the image, color, size, product type, and description you provided earlier.
                  </p>
-                <div className="flex justify-end items-center gap-4 pr-[152px] mt-1.5 ">
+                <div className="flex justify-end items-center gap-4 pr-[136px] mt-1.5 ">
                 <button>
                 <BackButton onBack={onBack} />
                 </button>

@@ -14,7 +14,7 @@ import axios from 'axios';
 function CreateDesign({ onNext, updateCreateData }) {
   const [selectedProduct, setSelectedProduct] = useState('tshirt');
   const [designURL, setDesignURL] = useState('');
-  const [selectedColor, setSelectedColor] = useState('white'); // optional
+  const [selectedColors, setSelectedColors] = useState(['white']); // optional
 
   const handleSave = async () => {
     try {
@@ -66,8 +66,8 @@ function CreateDesign({ onNext, updateCreateData }) {
           <div className="w-full flex justify-between items-start pr-[127px]">
             <ColorSelection
               productType={selectedProduct}
-              selectedColor={selectedColor}
-              setSelectedColor={setSelectedColor}
+              selectedColors={selectedColors}
+              setSelectedColors={setSelectedColors}
             />
             <div className="flex justify-end items-center gap-4 mt-6">
               <SaveButton onSave={handleSave} />
@@ -84,7 +84,11 @@ function CreateDesign({ onNext, updateCreateData }) {
         </div>
 
         <div className="flex justify-center mt-2">
-          <SelectedProduct />
+          <SelectedProduct 
+            selectedProduct={selectedProduct}
+            selectedColors={selectedColors}
+            uploadedImage={designURL}
+          />
         </div>
 
         <Walkthrough />
