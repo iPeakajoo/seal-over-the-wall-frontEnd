@@ -1,10 +1,10 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router';
 import Home from '../pages/Home';
 import Shop from '../pages/Shop';
 import HowtoWork from '../pages/HowtoWork';
 import ExpressYourself from '../pages/ExpressYourself';
 import Cart from '../pages/Cart';
-import CheckOut from '../pages/checkout/CheckOut';
+import CheckOut from '../pages/checkout/Checkout';
 import Login from '../pages/auth/Login';
 import Register from '../pages/auth/Register';
 import Layout from '../layouts/Layout';
@@ -16,10 +16,7 @@ import Manage from '../pages/admin/Manage';
 import HomeUser from '../pages/user/HomeUser';
 import ProductDetail from '../pages/ProductDetail';
 import Signup from '../pages/Signup';
-import CreateDesign from '../pages/CreateDesign';
-import CreateDesignLayout from '../layouts/CreateDesignLayout';
-import CollectDetails from '../pages/CollectDetails';
-import { AuthProvider } from '../context/AuthContext';
+import ExpressPublishPage from '../pages/expressAndPubish';
 
 const router = createBrowserRouter([
   {
@@ -35,7 +32,8 @@ const router = createBrowserRouter([
       { path: 'login', element: <Login /> },
       { path: 'register', element: <Register /> },
       { path: 'checkout', element: <CheckOut /> },
-      { path: 'signup', element: <Signup /> }
+      { path: 'signup', element: <Signup /> },
+      { path: 'expressAndPubish', element: <ExpressPublishPage /> }
     ]
   },
   {
